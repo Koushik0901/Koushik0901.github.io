@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Koushik's portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet"
+    href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
+  <link href='https://fonts.googleapis.com/css?family=Montserrat'
+    rel='stylesheet'>
+  <style>
+    body {
+      color: black;
+      font-family: 'Montserrat';
+    }
+
+    /*set font size for bio page*/
+    .home {
+      font-size: 20px;
+    }
+
+    .biotable {
+      margin-top: 0px;
+      inline-size: 90%;
+      overflow: hidden;
+    }
+    td {
+      position: relative;
+      top: 0px;
+    }
+    
+
+    /* top bar design */
+    nav {
+      font-size: 19px;
+      overflow: hidden;
+    }
+
+    nav li {
+      float: right;
+      font-weight: bold;
+    }
+
+    nav li a {
+      color: black;
+      padding: 10px 15px;
+      display: block;
+      text-align: center;
+      text-decoration: none;
+    }
+
+    nav li a:hover:not(.active) {
+      color: #2962ff;
+    }
+
+    nav ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+    }
+
+    .active {
+      color: #2962ff;
+    }
+
+    /*Contact form design*/
+    .form {
+      border-spacing: 10px;
+    }
+
+    input:not([type="submit"]):not([type="reset"]),
+    textarea {
+      border: 2px solid black;
+      border-radius: 5px;
+    }
+
+    input[type=submit],
+    input[type=reset] {
+      border: none;
+      border-radius: 5px;
+      padding: 6px 10px;
+    }
+
+    .fa:not(.fa-graduation-cap), .ai {
+      padding: 10px;
+      font-size: 40px;
+      width: 40px;
+      margin-top: 0px;
+      text-align: center;
+      vertical-align: top;
+      text-decoration: none;
+      border-radius: 50%;
+    }
+
+    .fa-linkedin,
+    .fa-github,
+    .fa-envelope, .ai-google-scholar {
+      background: white;
+      color: #2962ff;
+    }
+
+    .fa-linkedin:hover,
+    .fa-github:hover,
+    .fa-envelope:hover,
+    .ai-google-scholar:hover {
+      background: white;
+      color: #092d91;
+    }
+
+    .fa-graduation-cap {
+      padding: 0px 10px;
+      color: black;
+      font-size: 30px;
+    }
+    p[class="edu-italic"] {
+      padding: 0px 63px;
+      margin-top: 10px;
+      font-size: 18px;
+      color: rgb(145, 139, 139);
+    }
+    .dot {
+      height: 20px;
+      width: 20px;
+      background-color: #bbb;
+      border-radius: 50%;
+      display: inline-block;
+    }
+
+    .container {
+      width: 100%;
+      background-color: #ddd;
+      border: none;
+      border-radius: 50px;
+    }
+
+    .skills {
+      text-align: right;
+      padding-top: 1px;
+      padding-bottom: 1px;
+      color: white;
+      border: none;
+      border-radius: 50px;
+      background-color: #2962ff;
+    }
+
+    .ml, .nlp-cv, .python, .git {width: 70%; }
+    .dl {width: 80%;}
+    .aws, .sql {width: 65%;}
+
+  </style>
+</head>
+
+<body>
+  <nav>
+    <ul>
+      <li><a href="#contact">Contact Me</a></li>
+      <li><a href="#research">Research Work</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a class="active" href="#home">Bio</a></li>
+      <ul>
+  </nav>
+
+
+  <div class="home" id="home">
+    <table class="biotable">
+      <col style="width: 30%;">
+      <tr>
+        <td>
+          <center><img src="assets/images/photo.png" height="200px"
+              width="200px">
+            <h2>Koushik Sivarama Krishnan</h2>
+            <i style="color: rgb(145, 139, 139);">Machine Learning | Deep Learning | Natural Language Processing</i>
+          </center>
+        </td>
+        <td>
+          <h1>Biography</h1>
+          Hi! I am an Undergraduate student currently pursuing Bachelor of
+          Engineering in Computer Science Engineering. I am an ingenious student
+          with a predilection in AI. I am adept in various advanced machine
+          learning, deep learning and natural language processing concepts with
+          a strong foundation on the basics.
+          <br><br><br><br>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <center>
+            <a href="https://www.linkedin.com/in/koushik-sivarama-krishnan/"
+              class="fa fa-linkedin"></a>
+            <a href="https://github.com/Koushik0901" class="fa fa-github"></a>
+            <a href="mailto:koushik.nov01@gmail.com" class="fa fa-envelope"></a>
+            <a href="https://scholar.google.com/citations?user=lDmjJtoAAAAJ&hl=en" class="ai ai-google-scholar"></a>
+          </center>
+        </td>
+        <td>
+          <h2>Education</h2>
+          <i class="fa fa-graduation-cap"></i> <b>Bachelor of Engineering - Computer Science Engineering, 2019-</b>
+          <br>
+          <p class="edu-italic">Panimalar Engineering College</p>
+          <i class="fa fa-graduation-cap"></i> <b>Higher Secondary - Computer Science, 2018-2019</b>
+          <br>
+          <p class="edu-italic">SDAV School</p>
+        </td>
+      </tr>
+      <tr>
+        <td></td>
+        <td>
+          <h2>Skills</h2>
+          <p>Machine Learning</p>
+          <div class="container">
+            <div class="skills ml">70%</div>
+          </div>
+
+          <p>Deep Learning</p>
+          <div class="container">
+            <div class="skills dl">80%</div>
+          </div>
+
+          <p>Natural Language Processing & Computer Vision</p>
+          <div class="container">
+            <div class="skills nlp-cv">70%</div>
+          </div>
+          
+          <p>Python</p>
+          <div class="container">
+            <div class="skills python">70%</div>
+          </div>
+          <p>GIT</p>
+          <div class="container">
+            <div class="skills git">70%</div>
+          </div>
+          <p>AWS</p>
+          <div class="container">
+            <div class="skills aws">65%</div>
+          </div>
+          <p>SQL</p>
+          <div class="container">
+            <div class="skills sql">65%</div>
+          </div>
+        </td>
+      </tr>
+    </table>
+  </div>
+
+  <br>
+  <br>
+  <br>
+
+  <!-- Contact Form -->
+  <div class="contact-me" id="contact">
+    <form
+      action="https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=koushik.nov01@gmail.com"
+      enctype="text/plain">
+      <table class="form">
+        <tr>
+          <td>Name:</td>
+          <td><input type="text" id="name" placeholder="Enter your name..."
+              required></td>
+        </tr>
+        <tr>
+          <td>Email:</td>
+          <td><input type="email" id="email"
+              placeholder="Enter your email id..." required>
+          </td>
+        </tr>
+        <tr>
+          <td>Phone no:</td>
+          <td><input type="tel" id="phoneno"
+              placeholder="Enter your phone number..." optional></td>
+        </tr>
+        <tr>
+          <td>Message:</td>
+          <td><textarea name="message" rows="10" cols="30"></textarea></td>
+        </tr>
+        <tr>
+          <td><input type="reset" name="reset"></td>
+          <td><input type="submit" name="submit"></td>
+        </tr>
+      </table>
+    </form>
+  </div>
+</body>
+
+</html>
