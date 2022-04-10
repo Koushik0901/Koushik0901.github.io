@@ -1,89 +1,130 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Koushik's portfolio</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
   <link rel="stylesheet"
-    href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
-  <link href='https://fonts.googleapis.com/css?family=Montserrat'
-    rel='stylesheet'>
+    href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
+  <link href="https://fonts.googleapis.com/css?family=Montserrat"
+    rel="stylesheet" />
   <style>
+    * {
+      box-sizing: border-box;
+    }
+
     body {
-      color: black;
-      font-family: 'Montserrat';
+      font-family: "Montserrat";
+      font-size: 22px;
     }
 
-    /*set font size for bio page*/
-    .home {
-      font-size: 20px;
+
+    p[class="edu-italic"] {
+      padding: 0px 35px;
+      margin-top: 10px;
+      font-size: 18px;
+      color: rgb(145, 139, 139);
     }
 
-    .biotable {
-      margin-top: 0px;
-      inline-size: 90%;
+    /* NAV BAR */
+    #navbar {
       overflow: hidden;
-    }
-    td {
-      position: relative;
-      top: 0px;
-    }
-    
-
-    /* top bar design */
-    nav {
-      font-size: 19px;
-      overflow: hidden;
+      box-shadow: 0px 2px 6px #e9e9e9;
+      background-color: white;
+      position: fixed;
+      width: 100%;
+      top: 0;
     }
 
-    nav li {
+    #navbar li {
       float: right;
       font-weight: bold;
     }
 
-    nav li a {
+    #navbar a {
       color: black;
-      padding: 10px 15px;
+      padding: 15px 15px;
+      margin-right: 15px;
       display: block;
       text-align: center;
       text-decoration: none;
+      font-size: 19px;
     }
 
-    nav li a:hover:not(.active) {
+    #navbar a:hover:not(.active) {
       color: #2962ff;
     }
 
-    nav ul {
+    #navbar ul {
       list-style-type: none;
       margin: 0;
       padding: 0;
     }
 
-    .active {
+    #navbar a.active {
       color: #2962ff;
     }
 
-    /*Contact form design*/
-    .form {
-      border-spacing: 10px;
+    .sticky {
+      position: fixed;
+      top: 0px;
+      width: 100%;
+      background-color: white;
     }
 
-    input:not([type="submit"]):not([type="reset"]),
-    textarea {
-      border: 2px solid black;
-      border-radius: 5px;
+    .sticky+.content {
+      padding-top: 10px;
     }
 
-    input[type=submit],
-    input[type=reset] {
+
+    /* div blocks */
+    div {
+      overflow: auto;
+    }
+
+    /* BIO */
+    .bio-left {
+      width: 30%;
+      float: left;
+      background-color: white;
+      margin-top: 45px;
+      margin-left: 100px;
+      margin-right: 2px;
+      line-height: 1.5;
+    }
+
+    .bio-right {
+      width: 50%;
+      float: left;
+      text-align: left;
+      background-color: white;
+      margin-top: 45px;
+      margin-left: 0px;
+      margin-right: 50px;
+      padding: 0px 50px;
+      line-height: 1.5;
+    }
+
+    .learn-more-button {
+      background-color: #2962ff;
+      color: white;
+      padding: 8px 15px;
+      text-decoration: none;
       border: none;
-      border-radius: 5px;
-      padding: 6px 10px;
+      border-radius: 15px;
     }
 
-    .fa:not(.fa-graduation-cap), .ai {
+    .learn-more-button:hover {
+      background-color: #092d91;
+    }
+
+    /* icons and progress bars */
+    .fa:not(.fa-graduation-cap),
+    .ai {
       padding: 10px;
       font-size: 40px;
       width: 40px;
@@ -96,7 +137,8 @@
 
     .fa-linkedin,
     .fa-github,
-    .fa-envelope, .ai-google-scholar {
+    .fa-envelope,
+    .ai-google-scholar {
       background: white;
       color: #2962ff;
     }
@@ -109,27 +151,14 @@
       color: #092d91;
     }
 
-    .fa-graduation-cap {
-      padding: 0px 10px;
-      color: black;
-      font-size: 30px;
-    }
-    p[class="edu-italic"] {
-      padding: 0px 63px;
-      margin-top: 10px;
-      font-size: 18px;
-      color: rgb(145, 139, 139);
-    }
-    .dot {
-      height: 20px;
-      width: 20px;
-      background-color: #bbb;
-      border-radius: 50%;
-      display: inline-block;
+    /* SKILLS */
+    #skills {
+      float: center;
+      margin-left: 250px;
     }
 
     .container {
-      width: 100%;
+      width: 80%;
       background-color: #ddd;
       border: none;
       border-radius: 50px;
@@ -137,149 +166,252 @@
 
     .skills {
       text-align: right;
-      padding-top: 1px;
-      padding-bottom: 1px;
+      padding: 0px 0px 0px 0px;
       color: white;
       border: none;
       border-radius: 50px;
       background-color: #2962ff;
     }
 
-    .ml, .nlp-cv, .python, .git {width: 70%; }
-    .dl {width: 80%;}
-    .aws, .sql {width: 65%;}
+    .ml,
+    .nlp-cv,
+    .python,
+    .git {
+      width: 70%;
+    }
 
+    .dl {
+      width: 80%;
+    }
+
+    .aws,
+    .sql {
+      width: 65%;
+    }
+
+    #experience {
+      line-height: 1.5;
+      margin-left: 250px;
+      margin-right: 250px;
+    }
+
+    .pg3-left {
+      width: 35%;
+      float: left;
+      margin-top: 45px;
+      margin-left: 100px;
+      margin-right: 2px;
+      padding-left: 0px;
+      padding-top: 50px;
+      padding-bottom: 50px;
+    }
+
+    .pg3-right {
+      width: 50%;
+      float: left;
+      text-align: left;
+      margin-top: 45px;
+      margin-left: 0px;
+      margin-right: 50px;
+      padding-left: 50px;
+      padding-bottom: 50px;
+      line-height: 1.5;
+    }
+
+    img {
+      border-radius: 10px;
+      padding: 10px 10px 10px 10px;
+    }
+
+    /* For mobile phones: */
+    @media only screen and (max-width: 620px) {
+
+      .bio-left,
+      .bio-right {
+        width: 100%;
+      }
+    }
   </style>
 </head>
 
 <body>
-  <nav>
-    <ul>
-      <li><a href="#contact">Contact Me</a></li>
-      <li><a href="#research">Research Work</a></li>
-      <li><a href="#projects">Projects</a></li>
-      <li><a class="active" href="#home">Bio</a></li>
+  <div class="navbar" id="navbar">
+    <nav>
       <ul>
-  </nav>
-
-
-  <div class="home" id="home">
-    <table class="biotable">
-      <col style="width: 30%;">
-      <tr>
-        <td>
-          <center><img src="assets/images/photo.png" height="200px"
-              width="200px">
-            <h2>Koushik Sivarama Krishnan</h2>
-            <i style="color: rgb(145, 139, 139);">Machine Learning | Deep Learning | Natural Language Processing</i>
-          </center>
-        </td>
-        <td>
-          <h1>Biography</h1>
-          Hi! I am an Undergraduate student currently pursuing Bachelor of
-          Engineering in Computer Science Engineering. I am an ingenious student
-          with a predilection in AI. I am adept in various advanced machine
-          learning, deep learning and natural language processing concepts with
-          a strong foundation on the basics.
-          <br><br><br><br>
-        </td>
-      </tr>
-      <tr>
-        <td>
-          <center>
-            <a href="https://www.linkedin.com/in/koushik-sivarama-krishnan/"
-              class="fa fa-linkedin"></a>
-            <a href="https://github.com/Koushik0901" class="fa fa-github"></a>
-            <a href="mailto:koushik.nov01@gmail.com" class="fa fa-envelope"></a>
-            <a href="https://scholar.google.com/citations?user=lDmjJtoAAAAJ&hl=en" class="ai ai-google-scholar"></a>
-          </center>
-        </td>
-        <td>
-          <h2>Education</h2>
-          <i class="fa fa-graduation-cap"></i> <b>Bachelor of Engineering - Computer Science Engineering, 2019-</b>
-          <br>
-          <p class="edu-italic">Panimalar Engineering College</p>
-          <i class="fa fa-graduation-cap"></i> <b>Higher Secondary - Computer Science, 2018-2019</b>
-          <br>
-          <p class="edu-italic">SDAV School</p>
-        </td>
-      </tr>
-      <tr>
-        <td></td>
-        <td>
-          <h2>Skills</h2>
-          <p>Machine Learning</p>
-          <div class="container">
-            <div class="skills ml">70%</div>
-          </div>
-
-          <p>Deep Learning</p>
-          <div class="container">
-            <div class="skills dl">80%</div>
-          </div>
-
-          <p>Natural Language Processing & Computer Vision</p>
-          <div class="container">
-            <div class="skills nlp-cv">70%</div>
-          </div>
-          
-          <p>Python</p>
-          <div class="container">
-            <div class="skills python">70%</div>
-          </div>
-          <p>GIT</p>
-          <div class="container">
-            <div class="skills git">70%</div>
-          </div>
-          <p>AWS</p>
-          <div class="container">
-            <div class="skills aws">65%</div>
-          </div>
-          <p>SQL</p>
-          <div class="container">
-            <div class="skills sql">65%</div>
-          </div>
-        </td>
-      </tr>
-    </table>
+        <li><a href="#contact">Get in Touch</a></li>
+        <li><a href="#experience">Work Experience</a></li>
+        <li><a href="#research">Publications</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a class="active" href="#home">About</a></li>
+        <ul>
+    </nav>
   </div>
 
-  <br>
-  <br>
-  <br>
+  <script>
+    window.onscroll = function () { myFunction() };
 
-  <!-- Contact Form -->
-  <div class="contact-me" id="contact">
-    <form
-      action="https://mail.google.com/mail/u/0/?fs=1&tf=cm&source=mailto&to=koushik.nov01@gmail.com"
-      enctype="text/plain">
-      <table class="form">
-        <tr>
-          <td>Name:</td>
-          <td><input type="text" id="name" placeholder="Enter your name..."
-              required></td>
-        </tr>
-        <tr>
-          <td>Email:</td>
-          <td><input type="email" id="email"
-              placeholder="Enter your email id..." required>
-          </td>
-        </tr>
-        <tr>
-          <td>Phone no:</td>
-          <td><input type="tel" id="phoneno"
-              placeholder="Enter your phone number..." optional></td>
-        </tr>
-        <tr>
-          <td>Message:</td>
-          <td><textarea name="message" rows="10" cols="30"></textarea></td>
-        </tr>
-        <tr>
-          <td><input type="reset" name="reset"></td>
-          <td><input type="submit" name="submit"></td>
-        </tr>
-      </table>
-    </form>
+    var navbar = document.getElementById("navbar");
+    var sticky = navbar.offsetTop;
+
+    function myFunction() {
+      if (window.pageYOffset >= sticky) {
+        navbar.classList.add("sticky")
+      } else {
+        navbar.classList.remove("sticky");
+      }
+    }
+  </script>
+
+  <div class="bio-block" id="home">
+    <div class="bio-left">
+      <br>
+      <center><img src="assets/images/photo.png" height="300px" width="300px">
+        <h2>Koushik Sivarama Krishnan</h2>
+        <i style="color: rgb(145, 139, 139);">Machine Learning | Deep
+          Learning | Natural Language Processing</i>
+        <br><br>
+        <a href="https://www.linkedin.com/in/koushik-sivarama-krishnan/"
+          class="fa fa-linkedin"></a>
+        <a href="https://github.com/Koushik0901" class="fa fa-github"></a>
+        <a href="mailto:koushik.nov01@gmail.com" class="fa fa-envelope"></a>
+        <a href="https://scholar.google.com/citations?user=lDmjJtoAAAAJ&hl=en"
+          class="ai ai-google-scholar"></a>
+      </center>
+    </div>
+
+    <div class="bio-right">
+      <h1>Biography</h1>
+      <p>
+        Hi! I am an Undergraduate student currently pursuing Bachelor of
+        Engineering in Computer Science Engineering. I am an ingenious
+        student
+        with a predilection in AI. I am adept in various advanced
+        machine
+        learning, deep learning and natural language processing concepts
+        with
+        a strong foundation on the basics.
+      <p>
+
+      <h2>Education</h2>
+      <i class="fa fa-graduation-cap"></i> <b>Bachelor of Engineering -
+        Computer Science Engineering, 2019-2023</b>
+      <br>
+      <p class="edu-italic">Panimalar Engineering College</p>
+      <i class="fa fa-graduation-cap"></i> <b>Higher Secondary - Computer
+        Science, 2018-2019</b>
+      <br>
+      <p class="edu-italic">SDAV School</p>
+      <br><br>
+      <a href="#skills" class="learn-more-button">Learn More ↓</a>
+      <br><br><br><br><br><br><br><br>
+    </div>
+  </div>
+  <div class="pg2" id="skills">
+    <br><br>
+    <h2>Skills</h2>
+    <p>Machine Learning</p>
+    <div class="container">
+      <div class="skills ml">70%</div>
+    </div>
+
+    <p>Deep Learning</p>
+    <div class="container">
+      <div class="skills dl">80%</div>
+    </div>
+
+    <p>Natural Language Processing & Computer Vision</p>
+    <div class="container">
+      <div class="skills nlp-cv">70%</div>
+    </div>
+
+    <p>Python</p>
+    <div class="container">
+      <div class="skills python">70%</div>
+    </div>
+    <p>GIT</p>
+    <div class="container">
+      <div class="skills git">70%</div>
+    </div>
+    <p>AWS</p>
+    <div class="container">
+      <div class="skills aws">65%</div>
+    </div>
+    <p>SQL</p>
+    <div class="container">
+      <div class="skills sql">65%</div>
+    </div>
+    <br><br><br><br><br><br><br><br>
+  </div>
+
+  <div class="pg3" id="projects">
+    <br>
+    <center>
+      <h2>Projects</h2>
+    </center>
+    <div class="pg3-left" id="project-left">
+      <img src="assets/images/txt2sql.png" alt="" height="200px" width="650px"
+        border=2>
+      <br><br><br><br>
+      <img src="assets/images/image-captioning.png" alt="" height="200px"
+        width="650px" border=2>
+    </div>
+    <div class="pg3-right" id="project-right">
+      <h2>Text To SQL</h2>
+      <p class="desc">A Transformer model trained on WikiSQL dataset that
+        accepts natural language as input and returns SQL Query as
+        output. This model is deployed using streamlit.</p>
+      <a href="https://github.com/Koushik0901/Text2SQL"
+        class="learn-more-button">Learn More</a>
+      <br><br>
+      <h2>Image Captioning 📸 ⇒ 📝</h2>
+      <p class="desc">An encoder-decoder based model to caption images
+        built using PyTorch and deployed using Streamlit. This model
+        uses inceptionV3 as encoder and LSTM layers as decoder. This
+        model is trained on Flickr30k dataset.</p>
+      <a href="https://github.com/Koushik0901/Image-Captioning"
+        class="learn-more-button">Learn More</a>
+    </div>
+  </div>
+  <div class="pg4" id="experience">
+    <center>
+      <h2>Experience</h2>
+    </center>
+    <br><br>
+    <b>Computer Vision Intern, Drive Analytics</b><br>
+    <i style="font-size:14px;">October 2021 - February 2022</i>
+    <ul>
+      <li>Implemented a <b>Catcher detection</b> pipeline on Major
+        League
+        Baseball clips.</li>
+      <li>Performed several experiments and compared the results of
+        various <b>Object
+          Detection</b> Models.</li>
+      <li>Worked on <b>image to 3d</b> model rendering using
+        state-of-the-art techniques</li>
+    </ul><br>
+    <b>Deep Learning Intern, MURF.ai</b><br>
+    <i style="font-size:14px;">October 2021 - February 2022</i>
+    <ul>
+      <li>Developed a Deep Learning based <b>voice cloning</b>
+        application on
+        celebrities,
+        using various <b>state-of-the-art</b> algorithms.</li>
+      <li><b>Improved</b> upon the existing <b>speech-to-text</b>
+        model to detect
+        filler words.</li>
+      <li>Implemented a full pipeline <b>docker</b> script that
+        bridges
+        different processes of
+        the pipeline and deployed it on <b>Amazon Elastic Cluster
+          Service.</b></li>
+    </ul>
+    <br>
+  </div>
+  <div class="get-in-touch" id="contact">
+    <h2>Get in touch</h2>
+    <div class="form-labels">
+      <label id="name" value="Name:"></label>
+    </div>
   </div>
 </body>
 
