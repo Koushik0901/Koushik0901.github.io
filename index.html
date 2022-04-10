@@ -80,7 +80,6 @@
       padding-top: 10px;
     }
 
-
     /* div blocks */
     div {
       overflow: auto;
@@ -238,19 +237,30 @@
   <div class="navbar" id="navbar">
     <nav>
       <ul>
-        <li><a href="#contact">Get in Touch</a></li>
-        <li><a href="#experience">Work Experience</a></li>
-        <li><a href="#research">Publications</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a class="active" href="#home">About</a></li>
+        <li><a class="btn" href="#contact">Get in Touch</a></li>
+        <li><a class="btn" href="#experience">Work Experience</a></li>
+        <li><a class="btn" href="#research">Publications</a></li>
+        <li><a class="btn" href="#projects">Projects</a></li>
+        <li><a class="btn active" href="#home">About</a></li>
         <ul>
     </nav>
   </div>
 
   <script>
-    window.onscroll = function () { myFunction() };
-
+    // Add active class to the current button (highlight it)
     var navbar = document.getElementById("navbar");
+    var btns = navbar.getElementsByClassName("btn");
+
+    for (var i = 0; i < btns.length; i++) {
+      btns[i].addEventListener("click", function () {
+        var current = document.getElementsByClassName("active");
+        current[0].className = current[0].className.replace(" active", "");
+        this.className += " active";
+      });
+    }
+  </script>
+  <script>
+    window.onscroll = function () { myFunction() };
     var sticky = navbar.offsetTop;
 
     function myFunction() {
