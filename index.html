@@ -6,6 +6,9 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Koushik's portfolio</title>
+  <link id="theme" href="styles/lightmode.css" rel="stylesheet"
+    type="text/css" />
+
   <link rel="stylesheet"
     href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
   <link rel="stylesheet"
@@ -13,216 +16,6 @@
   <link href="https://fonts.googleapis.com/css?family=Montserrat"
     rel="stylesheet" />
   <style>
-    * {
-      box-sizing: border-box;
-    }
-
-    body {
-      font-family: "Montserrat";
-      font-size: 22px;
-    }
-
-
-    p[class="edu-italic"] {
-      padding: 0px 35px;
-      margin-top: 10px;
-      font-size: 18px;
-      color: rgb(145, 139, 139);
-    }
-
-    /* NAV BAR */
-    #navbar {
-      overflow: hidden;
-      box-shadow: 0px 2px 6px #e9e9e9;
-      background-color: white;
-      position: fixed;
-      width: 100%;
-      top: 0;
-    }
-
-    #navbar li {
-      float: right;
-      font-weight: bold;
-    }
-
-    #navbar a {
-      color: black;
-      padding: 15px 15px;
-      margin-right: 15px;
-      display: block;
-      text-align: center;
-      text-decoration: none;
-      font-size: 19px;
-    }
-
-    #navbar a:hover:not(.active) {
-      color: #2962ff;
-    }
-
-    #navbar ul {
-      list-style-type: none;
-      margin: 0;
-      padding: 0;
-    }
-
-    #navbar a.active {
-      color: #2962ff;
-    }
-
-    .sticky {
-      position: fixed;
-      top: 0px;
-      width: 100%;
-      background-color: white;
-    }
-
-    .sticky+.content {
-      padding-top: 10px;
-    }
-
-    /* div blocks */
-    div {
-      overflow: auto;
-    }
-
-    /* BIO */
-    .bio-left {
-      width: 30%;
-      float: left;
-      background-color: white;
-      margin-top: 45px;
-      margin-left: 100px;
-      margin-right: 2px;
-      line-height: 1.5;
-    }
-
-    .bio-right {
-      width: 50%;
-      float: left;
-      text-align: left;
-      background-color: white;
-      margin-top: 45px;
-      margin-left: 0px;
-      margin-right: 50px;
-      padding: 0px 50px;
-      line-height: 1.5;
-    }
-
-    .learn-more-button {
-      background-color: #2962ff;
-      color: white;
-      padding: 8px 15px;
-      text-decoration: none;
-      border: none;
-      border-radius: 15px;
-    }
-
-    .learn-more-button:hover {
-      background-color: #092d91;
-    }
-
-    /* icons and progress bars */
-    .fa:not(.fa-graduation-cap),
-    .ai {
-      padding: 10px;
-      font-size: 40px;
-      width: 40px;
-      margin-top: 0px;
-      text-align: center;
-      vertical-align: top;
-      text-decoration: none;
-      border-radius: 50%;
-    }
-
-    .fa-linkedin,
-    .fa-github,
-    .fa-envelope,
-    .ai-google-scholar {
-      background: white;
-      color: #2962ff;
-    }
-
-    .fa-linkedin:hover,
-    .fa-github:hover,
-    .fa-envelope:hover,
-    .ai-google-scholar:hover {
-      background: white;
-      color: #092d91;
-    }
-
-    /* SKILLS */
-    #skills {
-      float: center;
-      margin-left: 250px;
-    }
-
-    .container {
-      width: 80%;
-      background-color: #ddd;
-      border: none;
-      border-radius: 50px;
-    }
-
-    .skills {
-      text-align: right;
-      padding: 0px 0px 0px 0px;
-      color: white;
-      border: none;
-      border-radius: 50px;
-      background-color: #2962ff;
-    }
-
-    .ml,
-    .nlp-cv,
-    .python,
-    .git {
-      width: 70%;
-    }
-
-    .dl {
-      width: 80%;
-    }
-
-    .aws,
-    .sql {
-      width: 65%;
-    }
-
-    #experience {
-      line-height: 1.5;
-      margin-left: 250px;
-      margin-right: 250px;
-    }
-
-    .pg3-left {
-      width: 35%;
-      float: left;
-      margin-top: 45px;
-      margin-left: 100px;
-      margin-right: 2px;
-      padding-left: 0px;
-      padding-top: 50px;
-      padding-bottom: 50px;
-    }
-
-    .pg3-right {
-      width: 50%;
-      float: left;
-      text-align: left;
-      margin-top: 45px;
-      margin-left: 0px;
-      margin-right: 50px;
-      padding-left: 50px;
-      padding-bottom: 50px;
-      line-height: 1.5;
-    }
-
-    img {
-      border-radius: 10px;
-      padding: 10px 10px 10px 10px;
-    }
-
-    /* For mobile phones: */
     @media only screen and (max-width: 620px) {
 
       .bio-left,
@@ -234,19 +27,43 @@
 </head>
 
 <body>
-  <div class="navbar" id="navbar">
+  <div class=" navbar" id="navbar">
     <nav>
       <ul>
+        <button class="theme-button" onclick="ToggleTheme()">
+          <!-- Moon/Sun -->
+          <svg id="theme-icon" style="width:35px;height:35px"
+            viewBox="0 0 24 24">
+            <path fill="currentColor"
+              d="M7.5,2C5.71,3.15 4.5,5.18 4.5,7.5C4.5,9.82 5.71,11.85 7.53,13C4.46,13 2,10.54 2,7.5A5.5,5.5 0 0,1 7.5,2M19.07,3.5L20.5,4.93L4.93,20.5L3.5,19.07L19.07,3.5M12.89,5.93L11.41,5L9.97,6L10.39,4.3L9,3.24L10.75,3.12L11.33,1.47L12,3.1L13.73,3.13L12.38,4.26L12.89,5.93M9.59,9.54L8.43,8.81L7.31,9.59L7.65,8.27L6.56,7.44L7.92,7.35L8.37,6.06L8.88,7.33L10.24,7.36L9.19,8.23L9.59,9.54M19,13.5A5.5,5.5 0 0,1 13.5,19C12.28,19 11.15,18.6 10.24,17.93L17.93,10.24C18.6,11.15 19,12.28 19,13.5M14.6,20.08L17.37,18.93L17.13,22.28L14.6,20.08M18.93,17.38L20.08,14.61L22.28,17.15L18.93,17.38M20.08,12.42L18.94,9.64L22.28,9.88L20.08,12.42M9.63,18.93L12.4,20.08L9.87,22.27L9.63,18.93Z" />
+          </svg>
+        </button>
         <li><a class="btn" href="#contact">Get in Touch</a></li>
         <li><a class="btn" href="#experience">Work Experience</a></li>
-        <li><a class="btn" href="#research">Publications</a></li>
+        <li><a class="btn" href="#publications">Publications</a></li>
         <li><a class="btn" href="#projects">Projects</a></li>
+        <li><a class="btn" href="#skills">Skills</a></li>
         <li><a class="btn active" href="#home">About</a></li>
         <ul>
     </nav>
   </div>
+  <!-- Change theme using JS -->
+  <script type="text/javascript">
+    function ToggleTheme() {
+      // get an array of all link tags
+      var theme = document.getElementsByTagName('link')[0]
+      // change href attribute
+      if (theme.getAttribute('href') == "styles/lightmode.css") {
+        theme.setAttribute('href', "styles/darkmode.css");
+      }
+      else {
+        theme.setAttribute('href', "styles/lightmode.css");
+      }
+    }
+  </script>
 
-  <script>
+  <!-- Highlight active section using JS -->
+  <script type="text/javascript">
     // Add active class to the current button (highlight it)
     var navbar = document.getElementById("navbar");
     var btns = navbar.getElementsByClassName("btn");
@@ -259,7 +76,9 @@
       });
     }
   </script>
-  <script>
+
+  <!-- Fix navigation bar -->
+  <script type="text/javascript">
     window.onscroll = function () { myFunction() };
     var sticky = navbar.offsetTop;
 
@@ -302,7 +121,7 @@
         a strong foundation on the basics.
       <p>
 
-      <h2>Education</h2>
+      <h1>Education</h1>
       <i class="fa fa-graduation-cap"></i> <b>Bachelor of Engineering -
         Computer Science Engineering, 2019-2023</b>
       <br>
@@ -318,7 +137,7 @@
   </div>
   <div class="pg2" id="skills">
     <br><br>
-    <h2>Skills</h2>
+    <h1>Skills</h1>
     <p>Machine Learning</p>
     <div class="container">
       <div class="skills ml">70%</div>
@@ -350,13 +169,15 @@
     <div class="container">
       <div class="skills sql">65%</div>
     </div>
+    <br>
+
     <br><br><br><br><br><br><br><br>
   </div>
 
   <div class="pg3" id="projects">
-    <br>
+    <br><br>
     <center>
-      <h2>Projects</h2>
+      <h1>Projects</h1>
     </center>
     <div class="pg3-left" id="project-left">
       <img src="assets/images/txt2sql.png" alt="" height="200px" width="650px"
@@ -366,25 +187,63 @@
         width="650px" border=2>
     </div>
     <div class="pg3-right" id="project-right">
-      <h2>Text To SQL</h2>
+      <h3>Text To SQL</h3>
       <p class="desc">A Transformer model trained on WikiSQL dataset that
         accepts natural language as input and returns SQL Query as
         output. This model is deployed using streamlit.</p>
-      <a href="https://github.com/Koushik0901/Text2SQL"
+      <a href="https://github.com/Koushik0901/Text2SQL" target="_blank"
         class="learn-more-button">Learn More</a>
       <br><br>
-      <h2>Image Captioning 📸 ⇒ 📝</h2>
+      <h3>Image Captioning 📸 ⇒ 📝</h3>
       <p class="desc">An encoder-decoder based model to caption images
         built using PyTorch and deployed using Streamlit. This model
         uses inceptionV3 as encoder and LSTM layers as decoder. This
         model is trained on Flickr30k dataset.</p>
-      <a href="https://github.com/Koushik0901/Image-Captioning"
+      <a href="https://github.com/Koushik0901/Image-Captioning" target="_blank"
         class="learn-more-button">Learn More</a>
+      <br><br><br><br><br><br><br><br>
     </div>
   </div>
-  <div class="pg4" id="experience">
+
+
+  <div class="pg4" id="publications">
+    <br><br>
     <center>
-      <h2>Experience</h2>
+      <h1>Publications</h1>
+      <br><br>
+      <h3>Vision Transformer based COVID-19 Detection using Chest X-rays</h3>
+      <p class="authors">Koushik Sivarama Krishnan, Karthik Sivarama Krishnan
+      </p>
+      <a href="https://arxiv.org/abs/2110.04458" target="_blank"
+        class="arxiv">ArXiv</a>
+      <a href="https://ieeexplore.ieee.org/abstract/document/9609375/"
+        target="_blank" class="ieee">IEEE</a>
+
+      <h3>SwiftSRGAN - Rethinking Super-Resolution for Efficient and Real-time
+        Inference</h3>
+      <p class="authors">Koushik Sivarama Krishnan, Karthik Sivarama Krishnan
+      </p>
+      <a href="https://arxiv.org/abs/2111.14320" target="_blank"
+        class="arxiv">ArXiv</a>
+      <a href="https://ieeexplore.ieee.org/document/9609375" target="_blank"
+        class="ieee">IEEE</a>
+
+      <h3>Benchmarking Conventional Vision Models on Neuromorphic Fall Detection
+        and Action Recognition Dataset</h3>
+      <p class="authors">Koushik Sivarama Krishnan, Karthik Sivarama Krishnan
+      </p>
+      <a href="https://arxiv.org/abs/2201.12285" target="_blank"
+        class="arxiv">ArXiv</a>
+      <a href="https://ieeexplore.ieee.org/document/9720737" target="_blank"
+        class="ieee">IEEE</a>
+    </center>
+    <br><br><br><br><br><br><br><br>
+  </div>
+
+  <div class="pg5" id="experience">
+    <center>
+      <br><br><br>
+      <h1>Experience</h1>
     </center>
     <br><br>
     <b>Computer Vision Intern, Drive Analytics</b><br>
@@ -417,12 +276,25 @@
     </ul>
     <br>
   </div>
+  <br><br><br><br><br><br><br><br>
+  <center>
+    <h1>Get in touch</h1>
+    <br><br><br>
+  </center>
   <div class="get-in-touch" id="contact">
-    <h2>Get in touch</h2>
-    <div class="form-labels">
-      <label id="name" value="Name:"></label>
-    </div>
+    <form action="mailto:koushik.nov01@gmail.com" method="post"
+      enctype="text/plain">
+      <label>Name : </label>
+      <input type="text" id="form-name" value=""><br><br>
+      <label>Email : </label>
+      <input type="email" id="form-email" value=""><br><br>
+      <label>Message : </label><br><br>
+      <textarea id="form-message" rows="10" cols="80"></textarea><br><br>
+      <input type="reset" name="" id="form-reset">
+      <input type="submit" name="" id="form-submit">
+    </form>
   </div>
+  <br><br><br><br><br><br>
 </body>
 
 </html>
