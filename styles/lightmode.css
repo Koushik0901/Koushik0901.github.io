@@ -249,14 +249,19 @@ p[class="authors"] {
 .theme-button {
     background-color: white;
     display: inline-block;
-    height: 50px;
-    width: 50px;
-    padding-left: 30px;
-    margin: 0;
-    border: none;
+    height: 40px;
+    width: 45px;
+    margin-top: 5px;
+    margin-left: 15px;
+    border: 2px solid black;
+    border-radius: 15px;
     vertical-align: top;
 }
 
+.theme-button:hover {
+    color: #2962ff;
+    border-color: #2962ff;
+}
 
 .get-in-touch {
     padding-left: 600px;
