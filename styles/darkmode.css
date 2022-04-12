@@ -259,6 +259,14 @@ p[class="authors"] {
     border-radius: 10px;
 }
 
+.arxiv:hover,
+.ieee:hover,
+.code:hover {
+    background-color: #2962ff;
+    color: #181818;
+}
+
+
 .theme-button {
     background-color: #181818;
     color: white;
@@ -279,8 +287,12 @@ p[class="authors"] {
 }
 
 .get-in-touch {
-    padding-left: 600px;
     font-size: 30px;
+    text-align: center;
+}
+
+form {
+    display: inline-block;
 }
 
 #form-name,

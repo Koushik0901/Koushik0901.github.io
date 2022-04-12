@@ -219,6 +219,8 @@ p[class="desc"] {
 img {
     border-radius: 10px;
     padding: 10px 10px 10px 10px;
+    height: auto;
+    width: 100%;
 }
 
 p[class="authors"] {
@@ -246,6 +248,13 @@ p[class="authors"] {
     border-radius: 10px;
 }
 
+.arxiv:hover,
+.ieee:hover,
+.code:hover {
+    background-color: #2962ff;
+    color: white;
+}
+
 .theme-button {
     background-color: white;
     display: inline-block;
@@ -264,8 +273,12 @@ p[class="authors"] {
 }
 
 .get-in-touch {
-    padding-left: 600px;
     font-size: 30px;
+    text-align: center;
+}
+
+form {
+    display: inline-block;
 }
 
 #form-name,
