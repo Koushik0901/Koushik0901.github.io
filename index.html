@@ -2,299 +2,580 @@
 <html lang="en">
 
 <head>
-  <meta charset="UTF-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Koushik's portfolio</title>
-  <link id="theme" href="styles/lightmode.css" rel="stylesheet"
-    type="text/css" />
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Koushik's Portfolio</title>
 
-  <link rel="stylesheet"
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
-  <link rel="stylesheet"
-    href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css" />
-  <link href="https://fonts.googleapis.com/css?family=Montserrat"
-    rel="stylesheet" />
-  <style>
-    @media only screen and (max-width: 620px) {
+    <!-- Bulma -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/npm/bulma@0.9.3/css/bulma.min.css" />
 
-      .bio-left,
-      .bio-right {
-        width: 100%;
-      }
-    }
-  </style>
+    <!-- <link rel="stylesheet" type="text/css"
+        href="https://unpkg.com/bulma-prefers-dark" /> -->
+
+    <link rel="stylesheet" href="styles/lightmode.css" />
+    <!-- Font -->
+    <link href="https://fonts.googleapis.com/css?family=Montserrat"
+        rel="stylesheet" />
+    <!-- Font Awesome -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    <!-- Academicons -->
+    <link rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/jpswalsh/academicons@1/css/academicons.min.css">
 </head>
 
 <body>
-  <div class=" navbar" id="navbar">
-    <nav>
-      <ul>
-        <button class="theme-button" onclick="ToggleTheme()">
-          <!-- Moon/Sun -->
-          <svg id="theme-icon" style="width:30px;height:30px"
-            viewBox="0 0 24 24">
-            <path fill="currentColor"
-              d="M7.5,2C5.71,3.15 4.5,5.18 4.5,7.5C4.5,9.82 5.71,11.85 7.53,13C4.46,13 2,10.54 2,7.5A5.5,5.5 0 0,1 7.5,2M19.07,3.5L20.5,4.93L4.93,20.5L3.5,19.07L19.07,3.5M12.89,5.93L11.41,5L9.97,6L10.39,4.3L9,3.24L10.75,3.12L11.33,1.47L12,3.1L13.73,3.13L12.38,4.26L12.89,5.93M9.59,9.54L8.43,8.81L7.31,9.59L7.65,8.27L6.56,7.44L7.92,7.35L8.37,6.06L8.88,7.33L10.24,7.36L9.19,8.23L9.59,9.54M19,13.5A5.5,5.5 0 0,1 13.5,19C12.28,19 11.15,18.6 10.24,17.93L17.93,10.24C18.6,11.15 19,12.28 19,13.5M14.6,20.08L17.37,18.93L17.13,22.28L14.6,20.08M18.93,17.38L20.08,14.61L22.28,17.15L18.93,17.38M20.08,12.42L18.94,9.64L22.28,9.88L20.08,12.42M9.63,18.93L12.4,20.08L9.87,22.27L9.63,18.93Z" />
-          </svg>
-        </button>
-        <li><a class="btn" href="#contact">Get in Touch</a></li>
-        <li><a class="btn" href="#experience">Work Experience</a></li>
-        <li><a class="btn" href="#publications">Publications</a></li>
-        <li><a class="btn" href="#projects">Projects</a></li>
-        <li><a class="btn" href="#skills">Skills</a></li>
-        <li><a class="btn active" href="#home">About</a></li>
-        <ul>
+    <!-- Navigation Bar -->
+    <nav class="navbar has-shadow is-fixed-top">
+        <div class="navbar-brand">
+            <a class="navbar-burger" id="burger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </a>
+        </div>
+
+        <div class="navbar-menu is-tab" id="nav-links">
+            <div class="navbar-end">
+                <a class="navbar-item" href="#bio">About</a>
+                <a class="navbar-item" href="#skills">Skills</a>
+                <a class="navbar-item" href="#projects">Projects</a>
+                <a class="navbar-item" href="#publications">Publications</a>
+                <a class="navbar-item" href="#experience">Work
+                    Experience</a>
+                <a class="navbar-item" href="#contact">Get in
+                    Touch</a>
+                <div class="navbar-item has-dropdown is-hoverable">
+                    <a class="navbar-link" id="theme-icons">
+
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                            viewBox="0 0 512 512"
+                            style="width:25px;height:25px">
+                            <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                            <path fill="currentColor"
+                                d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z" />
+                        </svg>
+                    </a>
+                    <div class="navbar-dropdown">
+                        <a class="navbar-item">
+                            <!-- SUN -->
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 512 512"
+                                style="width:22px;height:22px">
+                                <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                                <path fill="currentColor"
+                                    d="M256 159.1c-53.02 0-95.1 42.98-95.1 95.1S202.1 351.1 256 351.1s95.1-42.98 95.1-95.1S309 159.1 256 159.1zM509.3 347L446.1 255.1l63.15-91.01c6.332-9.125 1.104-21.74-9.826-23.72l-109-19.7l-19.7-109c-1.975-10.93-14.59-16.16-23.72-9.824L256 65.89L164.1 2.736c-9.125-6.332-21.74-1.107-23.72 9.824L121.6 121.6L12.56 141.3C1.633 143.2-3.596 155.9 2.736 164.1L65.89 256l-63.15 91.01c-6.332 9.125-1.105 21.74 9.824 23.72l109 19.7l19.7 109c1.975 10.93 14.59 16.16 23.72 9.824L256 446.1l91.01 63.15c9.127 6.334 21.75 1.107 23.72-9.822l19.7-109l109-19.7C510.4 368.8 515.6 356.1 509.3 347zM256 383.1c-70.69 0-127.1-57.31-127.1-127.1c0-70.69 57.31-127.1 127.1-127.1s127.1 57.3 127.1 127.1C383.1 326.7 326.7 383.1 256 383.1z" />
+                            </svg>
+                            <p class="pl-2">Light</p>
+                        </a>
+                        <a class="navbar-item">
+                            <!-- MOON -->
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                viewBox="0 0 512 512"
+                                style="width:22px;height:22px">
+                                <!--! Font Awesome Pro 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2022 Fonticons, Inc. -->
+                                <path fill="currentColor"
+                                    d="M32 256c0-123.8 100.3-224 223.8-224c11.36 0 29.7 1.668 40.9 3.746c9.616 1.777 11.75 14.63 3.279 19.44C245 86.5 211.2 144.6 211.2 207.8c0 109.7 99.71 193 208.3 172.3c9.561-1.805 16.28 9.324 10.11 16.95C387.9 448.6 324.8 480 255.8 480C132.1 480 32 379.6 32 256z" />
+                            </svg>
+                            <p class="pl-2">Dark</p>
+                        </a>
+                    </div>
+                </div>
+            </div>
     </nav>
-  </div>
-  <!-- Change theme using JS -->
-  <script type="text/javascript">
-    function ToggleTheme() {
-      // get an array of all link tags
-      var theme = document.getElementsByTagName('link')[0]
-      // change href attribute
-      if (theme.getAttribute('href') == "styles/lightmode.css") {
-        theme.setAttribute('href', "styles/darkmode.css");
-      }
-      else {
-        theme.setAttribute('href', "styles/lightmode.css");
-      }
-    }
-  </script>
 
-  <!-- Highlight active section using JS -->
-  <script type="text/javascript">
-    // Add active class to the current button (highlight it)
-    var navbar = document.getElementById("navbar");
-    var btns = navbar.getElementsByClassName("btn");
+    <section class="section" id="bio">
+        <div class="container mt-6">
+            <div class="columns">
+                <div class="column is-two-fifths has-text-centered">
+                    <figure class="img">
+                        <img src="assets/images/photo.png" height="300px"
+                            width="300px">
+                    </figure>
+                    <br><br>
+                    <b class="is-size-3"> Koushik Sivarama
+                        Krishnan</b><br><br>
+                    <i class="is-size-5">Machine Learning |
+                        Deep
+                        Learning | Natural Language Processing</i>
 
-    for (var i = 0; i < btns.length; i++) {
-      btns[i].addEventListener("click", function () {
-        var current = document.getElementsByClassName("active");
-        current[0].className = current[0].className.replace(" active", "");
-        this.className += " active";
-      });
-    }
-  </script>
+                    <br><br>
+                    <a href="https://www.linkedin.com/in/koushik-sivarama-krishnan/"
+                        class="fa fa-linkedin"></a>
+                    <a href="https://github.com/Koushik0901"
+                        class="fa fa-github"></a>
+                    <a href="mailto:koushik.nov01@gmail.com"
+                        class="fa fa-envelope"></a>
+                    <a href="https://scholar.google.com/citations?user=lDmjJtoAAAAJ&hl=en"
+                        class="ai ai-google-scholar"></a>
 
-  <!-- Fix navigation bar -->
-  <script type="text/javascript">
-    window.onscroll = function () { myFunction() };
-    var sticky = navbar.offsetTop;
+                </div>
+                <div class="column is-half" id="bio">
+                    <div class="content is-large">
+                        <h1>Biography</h1>
+                        <p>Hi! I am an Undergraduate student currently pursuing
+                            Bachelor of
+                            Engineering in Computer Science Engineering. I am an
+                            ingenious
+                            student
+                            with a predilection in AI. I am adept in various
+                            advanced
+                            machine
+                            learning, deep learning and natural language
+                            processing
+                            concepts
+                            with
+                            a b foundation on the basics.</p>
+                    </div>
+                    <br><br>
+                    <div class="content is-large" id="education">
+                        <h1>Education</h1>
+                        <i class="fa fa-graduation-cap"></i> <b
+                            class="is-size-4">Bachelor of
+                            Engineering -
+                            Computer Science, 2019-2023</b>
+                        <br>
+                        <p class="p-gray">Panimalar Engineering College</p>
+                        <i class="fa fa-graduation-cap"></i> <b
+                            class="is-size-4">Higher Secondary
+                            - Computer
+                            Science, 2018-2019</b>
+                        <br>
+                        <p class="p-gray">SDAV School</p>
+                        <br>
+                        <a href="#skills" class="learn-more-button">Learn More
+                            ↓</a>
+                    </div>
+                </div>
+                <div class="column is-2">
 
-    function myFunction() {
-      if (window.pageYOffset >= sticky) {
-        navbar.classList.add("sticky")
-      } else {
-        navbar.classList.remove("sticky");
-      }
-    }
-  </script>
+                </div>
+            </div>
+        </div>
+        <br>
+    </section>
+    <section class="section" id="skills">
+        <div class="container mt-6">
+            <div class="columns">
+                <div class="column is-full">
+                    <div class="content is-large">
+                        <h1 class="  has-text-centered">Skills
+                        </h1>
+                        <h6>Machine Learning</h6>
+                        <div class="progress-wrapper">
+                            <progress class="progress is-link is-large"
+                                value="70" max="100">70%</progress>
+                            <p class="progress-value has-text-white">70%</p>
+                        </div>
+                        <h6>Deep Learning</h6>
+                        <div class="progress-wrapper">
+                            <progress class="progress is-link is-large"
+                                value="80" max="100">80%</progress>
+                            <p class="progress-value has-text-white">80%</p>
+                        </div>
+                        <h6>Natural Language Processing &
+                            Computer Vision</h6>
+                        <div class="progress-wrapper">
+                            <progress class="progress is-link is-large"
+                                value="70" max="100">70%</progress>
+                            <p class="progress-value has-text-white">70%</p>
+                        </div>
+                        <h6>Python</h6>
+                        <div class="progress-wrapper">
+                            <progress class="progress is-link is-large"
+                                value="70" max="100">70%</progress>
+                            <p class="progress-value has-text-white">70%</p>
+                        </div>
+                        <h6>GIT</h6>
+                        <div class="progress-wrapper">
+                            <progress class="progress is-link is-large"
+                                value="70" max="100">70%</progress>
+                            <p class="progress-value has-text-white">70%</p>
+                        </div>
+                        <h6>AWS</h6>
+                        <div class="progress-wrapper">
+                            <progress class="progress is-link is-large"
+                                value="65" max="100">65%</progress>
+                            <p class="progress-value has-text-white">65%</p>
+                        </div>
+                        <h6>SQL</h6>
+                        <div class="progress-wrapper">
+                            <progress class="progress is-link is-large"
+                                value="65" max="100">65%</progress>
+                            <p class="progress-value has-text-white">65%</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- PROJECTS -->
+    <section class="section" id="projects">
+        <div class="container mt-6">
+            <div class="content is-large">
+                <h1 class="  has-text-centered">Projects
+                </h1>
+            </div>
+            <br><br>
+            <div class="columns" id="txt2sql-project">
+                <div class="column is-5">
+                    <figure class="image is-3by1">
+                        <img src="assets/images/txt2sql.png"
+                            class="project-images" alt="" height="200px"
+                            width="650px" border=2>
+                    </figure>
+                </div>
+                <div class="column is-7">
+                    <div class="content is-medium">
+                        <h3>Text To SQL</h3>
+                        <p>A Transformer model trained on
+                            WikiSQL
+                            dataset that
+                            accepts natural language as input and returns SQL
+                            Query
+                            as
+                            output. This model is deployed using streamlit.</p>
+                        <a href="https://github.com/Koushik0901/Text2SQL"
+                            target="_blank" class="learn-more-button">Learn
+                            More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="columns mt-6" id="image-cap-project">
+                <div class="column is-5">
+                    <figure class="image is-3by1">
+                        <img src="assets/images/image-captioning.png"
+                            class="project-images" alt="" height="200px"
+                            width="650px" border=2>
+                    </figure>
+                </div>
+                <div class="column is-7">
+                    <div class="content is-medium">
+                        <h3>Image Captioning 📸 ⇒ 📝</h3>
+                        <p>An encoder-decoder based model
+                            to caption images
+                            built using PyTorch and deployed using
+                            Streamlit.
+                            This model
+                            uses inceptionV3 as encoder and LSTM layers as
+                            decoder. This
+                            model is trained on Flickr30k dataset.</p>
+                        <a href="https://github.com/Koushik0901/Image-Captioning"
+                            target="_blank" class="learn-more-button">Learn
+                            More</a>
+                    </div>
+                </div>
+            </div>
+            <div class="columns mt-6" id="flair-project">
+                <div class="column is-5">
+                    <figure class="image is-3by2">
+                        <img src="assets/images/flair.png"
+                            class="project-images" alt="" height="200px"
+                            width="200px" border=2>
+                    </figure>
+                </div>
+                <div class="column is-7">
+                    <div class="content is-medium">
+                        <h3>Brain MRI FLAIR Segmentation
+                        </h3>
+                        <p>A Complete MLOPS project on
+                            Brain MRI FLAIR Segmentation. A MobileNet v3 based
+                            segmentation project to perform instance
+                            segmentation on FLAIR (Fluid-Attenuated Inversion
+                            Recovery) abnormality in brain MRI images. This
+                            model is trained using Brain MRI segmentation from
+                            kaggle and is deployed on Heroku.</p>
+                        <a href="https://github.com/Koushik0901/FLAIR-Segmentation-MLOPS"
+                            target="_blank" class="learn-more-button">Learn
+                            More</a>
+                    </div>
+                </div>
+            </div>
+    </section>
 
-  <div class="bio-block" id="home">
-    <div class="bio-left">
-      <br>
-      <center><img src="assets/images/photo.png" height="300px" width="300px">
-        <h2>Koushik Sivarama Krishnan</h2>
-        <i style="color: rgb(145, 139, 139);">Machine Learning | Deep
-          Learning | Natural Language Processing</i>
-        <br><br>
-        <a href="https://www.linkedin.com/in/koushik-sivarama-krishnan/"
-          class="fa fa-linkedin"></a>
-        <a href="https://github.com/Koushik0901" class="fa fa-github"></a>
-        <a href="mailto:koushik.nov01@gmail.com" class="fa fa-envelope"></a>
-        <a href="https://scholar.google.com/citations?user=lDmjJtoAAAAJ&hl=en"
-          class="ai ai-google-scholar"></a>
-      </center>
-    </div>
+    <section class="section" id="publications">
+        <div class="container mt-6">
+            <div class="columns">
+                <div class="column is-full">
+                    <div class="content is-large has-text-centered">
+                        <h1>Publications</h1>
+                        <br>
+                        <h5 class="mb-2 has-text-weight-bold">Vision Transformer
+                            based COVID-19
+                            Detection using
+                            Chest X-rays</h5>
+                        <p class="is-size-6 has-text-grey">Koushik Sivarama
+                            Krishnan, Karthik Sivarama Krishnan</p>
 
-    <div class="bio-right">
-      <h1>Biography</h1>
-      <p>
-        Hi! I am an Undergraduate student currently pursuing Bachelor of
-        Engineering in Computer Science Engineering. I am an ingenious
-        student
-        with a predilection in AI. I am adept in various advanced
-        machine
-        learning, deep learning and natural language processing concepts
-        with
-        a strong foundation on the basics.
-      <p>
+                        <!-- Modal -->
+                        <div class="modal" id="vit-cite">
+                            <div class="modal-background"></div>
+                            <div class="modal-card">
+                                <header class="modal-card-head">
+                                    <p class="modal-card-title">Cite</p>
+                                    <button class="delete"
+                                        aria-label="close"></button>
+                                </header>
+                                <section class="modal-card-body">
+                                    <p id="vit-bib" class="is-size-4">
+                                        @INPROCEEDINGS{9609375,
+                                        author={Krishnan, Koushik Sivarama and
+                                        Krishnan, Karthik Sivarama},
+                                        booktitle={2021 6th International
+                                        Conference on Signal Processing,
+                                        Computing and Control (ISPCC)},
+                                        title={Vision Transformer based COVID-19
+                                        Detection using Chest X-rays},
+                                        year={2021},
+                                        volume={},
+                                        number={},
+                                        pages={644-648},
+                                        doi={10.1109/ISPCC53510.2021.9609375}}
+                                    </p>
+                                </section>
+                                <footer class="modal-card-foot">
+                                    <button class="pub-buttons"
+                                        onclick="copyBib('vit-bib');">Copy</button>
+                                </footer>
+                            </div>
+                        </div>
+                        <!-- Buttons -->
+                        <button class="cite-trigger" data-target="vit-cite">
+                            Cite
+                        </button>
+                        <a href="https://arxiv.org/abs/2110.04458"
+                            target="_blank" class="pub-buttons">ArXiv</a>
+                        <a href="https://ieeexplore.ieee.org/abstract/document/9609375/"
+                            target="_blank" class="pub-buttons">IEEE</a>
 
-      <h1>Education</h1>
-      <i class="fa fa-graduation-cap"></i> <b>Bachelor of Engineering -
-        Computer Science Engineering, 2019-2023</b>
-      <br>
-      <p class="edu-italic">Panimalar Engineering College</p>
-      <i class="fa fa-graduation-cap"></i> <b>Higher Secondary - Computer
-        Science, 2018-2019</b>
-      <br>
-      <p class="edu-italic">SDAV School</p>
-      <br><br>
-      <a href="#skills" class="learn-more-button">Learn More ↓</a>
-      <br><br><br><br><br><br><br><br>
-    </div>
-  </div>
-  <div class="pg2" id="skills">
-    <br><br>
-    <h1>Skills</h1>
-    <p>Machine Learning</p>
-    <div class="container">
-      <div class="skills ml">70%</div>
-    </div>
+                        <!-- PUB 2 -->
+                        <br><br>
+                        <h5 class="mb-2 has-text-weight-bold">SwiftSRGAN -
+                            Rethinking
+                            Super-Resolution for Efficient and Real-time
+                            Inference</h5>
+                        <p class="is-size-6 has-text-grey">Koushik Sivarama
+                            Krishnan, Karthik Sivarama Krishnan</p>
 
-    <p>Deep Learning</p>
-    <div class="container">
-      <div class="skills dl">80%</div>
-    </div>
-
-    <p>Natural Language Processing & Computer Vision</p>
-    <div class="container">
-      <div class="skills nlp-cv">70%</div>
-    </div>
-
-    <p>Python</p>
-    <div class="container">
-      <div class="skills python">70%</div>
-    </div>
-    <p>GIT</p>
-    <div class="container">
-      <div class="skills git">70%</div>
-    </div>
-    <p>AWS</p>
-    <div class="container">
-      <div class="skills aws">65%</div>
-    </div>
-    <p>SQL</p>
-    <div class="container">
-      <div class="skills sql">65%</div>
-    </div>
-    <br>
-
-    <br><br><br><br><br><br><br><br>
-  </div>
-
-  <div class="pg3" id="projects">
-    <br><br>
-    <center>
-      <h1>Projects</h1>
-    </center>
-    <div class="pg3-left" id="project-left">
-      <img src="assets/images/txt2sql.png" class="project-images" alt="" height="200px" width="650px"
-        border=2>
-      <br><br><br><br>
-      <img src="assets/images/image-captioning.png" class="project-images" alt="" height="200px"
-        width="650px" border=2>
-    </div>
-    <div class="pg3-right" id="project-right">
-      <h3>Text To SQL</h3>
-      <p class="desc">A Transformer model trained on WikiSQL dataset that
-        accepts natural language as input and returns SQL Query as
-        output. This model is deployed using streamlit.</p>
-      <a href="https://github.com/Koushik0901/Text2SQL" target="_blank"
-        class="learn-more-button">Learn More</a>
-      <br><br>
-      <h3>Image Captioning 📸 ⇒ 📝</h3>
-      <p class="desc">An encoder-decoder based model to caption images
-        built using PyTorch and deployed using Streamlit. This model
-        uses inceptionV3 as encoder and LSTM layers as decoder. This
-        model is trained on Flickr30k dataset.</p>
-      <a href="https://github.com/Koushik0901/Image-Captioning" target="_blank"
-        class="learn-more-button">Learn More</a>
-      <br><br><br><br><br><br><br><br>
-    </div>
-  </div>
+                        <!-- model -->
+                        <div class="modal" id="swift-cite">
+                            <div class="modal-background"></div>
+                            <div class="modal-card">
+                                <header class="modal-card-head">
+                                    <p class="modal-card-title">Cite</p>
+                                    <button class="delete"
+                                        aria-label="close"></button>
+                                </header>
+                                <section class="modal-card-body">
+                                    <p id="swift-bib" class="is-size-4">
+                                        @INPROCEEDINGS{9689188,
+                                        author={Krishnan, Koushik Sivarama and
+                                        Krishnan, Karthik Sivarama},
+                                        booktitle={2021 International Conference
+                                        on Intelligent Cybernetics Technology
+                                        Applications (ICICyTA)},
+                                        title={SwiftSRGAN - Rethinking
+                                        Super-Resolution for Efficient and
+                                        Real-time Inference},
+                                        year={2021},
+                                        volume={},
+                                        number={},
+                                        pages={46-51},
+                                        doi={10.1109/ICICyTA53712.2021.9689188}}
+                                    </p>
+                                </section>
+                                <footer class="modal-card-foot">
+                                    <button class="pub-buttons"
+                                        onclick="copyBib('swift-bib');">Copy</button>
+                                </footer>
+                            </div>
+                        </div>
+                        <!-- buttons -->
+                        <button class="cite-trigger" data-target="swift-cite">
+                            Cite
+                        </button>
+                        <a href="https://arxiv.org/abs/2111.14320"
+                            target="_blank" class="pub-buttons">ArXiv</a>
+                        <a href="https://ieeexplore.ieee.org/document/9689188"
+                            target="_blank" class="pub-buttons">IEEE</a>
 
 
-  <div class="pg4" id="publications">
-    <br><br>
-    <center>
-      <h1>Publications</h1>
-      <br><br>
-      <h3>Vision Transformer based COVID-19 Detection using Chest X-rays</h3>
-      <p class="authors">Koushik Sivarama Krishnan, Karthik Sivarama Krishnan
-      </p>
-      <a href="https://arxiv.org/abs/2110.04458" target="_blank"
-        class="arxiv">ArXiv</a>
-      <a href="https://ieeexplore.ieee.org/abstract/document/9609375/"
-        target="_blank" class="ieee">IEEE</a>
+                        <!-- PUB 3 -->
+                        <br><br>
+                        <h5 class="mb-2 has-text-weight-bold">Benchmarking
+                            Conventional Vision Models
+                            on Neuromorphic Fall Detection and Action
+                            Recognition Dataset</h5>
+                        <p class="is-size-6 has-text-grey">Koushik Sivarama
+                            Krishnan, Karthik Sivarama Krishnan</p>
 
-      <h3>SwiftSRGAN - Rethinking Super-Resolution for Efficient and Real-time
-        Inference</h3>
-      <p class="authors">Koushik Sivarama Krishnan, Karthik Sivarama Krishnan
-      </p>
-      <a href="https://arxiv.org/abs/2111.14320" target="_blank"
-        class="arxiv">ArXiv</a>
-      <a href="https://ieeexplore.ieee.org/document/9609375" target="_blank"
-        class="ieee">IEEE</a>
+                        <!-- model -->
+                        <div class="modal" id="dvs-cite">
+                            <div class="modal-background"></div>
+                            <div class="modal-card">
+                                <header class="modal-card-head">
+                                    <p class="modal-card-title">Cite</p>
+                                    <button class="delete"
+                                        aria-label="close"></button>
+                                </header>
+                                <section class="modal-card-body">
+                                    <p id="dvs-bib" class="is-size-4">
+                                        @INPROCEEDINGS{9720737,
+                                        author={Krishnan, Karthik Sivarama and
+                                        Krishnan, Koushik Sivarama},
+                                        booktitle={2022 IEEE 12th Annual
+                                        Computing and Communication Workshop and
+                                        Conference (CCWC)},
+                                        title={Benchmarking Conventional Vision
+                                        Models on Neuromorphic Fall Detection
+                                        and Action Recognition Dataset},
+                                        year={2022},
+                                        volume={},
+                                        number={},
+                                        pages={0518-0523},
+                                        doi={10.1109/CCWC54503.2022.9720737}}
+                                    </p>
+                                </section>
+                                <footer class="modal-card-foot">
+                                    <button class="pub-buttons"
+                                        onclick="copyBib('dvs-bib');">Copy</button>
+                                </footer>
+                            </div>
+                        </div>
+                        <!-- buttons -->
+                        <button class="cite-trigger" data-target="dvs-cite">
+                            Cite
+                        </button>
+                        <a href="https://arxiv.org/abs/2201.12285"
+                            target="_blank" class="pub-buttons">ArXiv</a>
+                        <a href="https://ieeexplore.ieee.org/document/9720737"
+                            target="_blank" class="pub-buttons">IEEE</a>
 
-      <h3>Benchmarking Conventional Vision Models on Neuromorphic Fall Detection
-        and Action Recognition Dataset</h3>
-      <p class="authors">Koushik Sivarama Krishnan, Karthik Sivarama Krishnan
-      </p>
-      <a href="https://arxiv.org/abs/2201.12285" target="_blank"
-        class="arxiv">ArXiv</a>
-      <a href="https://ieeexplore.ieee.org/document/9720737" target="_blank"
-        class="ieee">IEEE</a>
-    </center>
-    <br><br><br><br><br><br><br><br>
-  </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <div class="pg5" id="experience">
-    <center>
-      <br><br><br>
-      <h1>Experience</h1>
-    </center>
-    <br><br>
-    <b>Computer Vision Intern, Drive Analytics</b><br>
-    <i style="font-size:14px;">October 2021 - February 2022</i>
-    <ul>
-      <li>Implemented a <b>Catcher detection</b> pipeline on Major
-        League
-        Baseball clips.</li>
-      <li>Performed several experiments and compared the results of
-        various <b>Object
-          Detection</b> Models.</li>
-      <li>Worked on <b>image to 3d</b> model rendering using
-        state-of-the-art techniques</li>
-    </ul><br>
-    <b>Deep Learning Intern, MURF.ai</b><br>
-    <i style="font-size:14px;">January 2021 - June 2021</i>
-    <ul>
-      <li>Developed a Deep Learning based <b>voice cloning</b>
-        application on
-        celebrities,
-        using various <b>state-of-the-art</b> algorithms.</li>
-      <li><b>Improved</b> upon the existing <b>speech-to-text</b>
-        model to detect
-        filler words.</li>
-      <li>Implemented a full pipeline <b>docker</b> script that
-        bridges
-        different processes of
-        the pipeline and deployed it on <b>Amazon Elastic Cluster
-          Service.</b></li>
-    </ul>
-    <br>
-  </div>
-  <br><br><br><br><br><br><br><br>
-  <center>
-    <h1>Get in touch</h1>
-    <br><br><br>
-  </center>
-  <div class="get-in-touch" id="contact">
-    <form action="mailto:koushik.nov01@gmail.com" method="post"
-      enctype="text/plain">
-      <label>Name : </label>
-      <input type="text" id="form-name" value=""><br><br>
-      <label>Email : </label>
-      <input type="email" id="form-email" value=""><br><br>
-      <label>Message : </label><br><br>
-      <textarea id="form-message" rows="10" cols="80"></textarea><br><br>
-      <input type="reset" name="" id="form-reset">
-      <input type="submit" name="" id="form-submit">
-    </form>
-  </div>
-  <br><br><br><br><br><br>
+    <!-- EXPERIENCE -->
+    <section class="section" id="experience">
+        <div class="container mt-6">
+            <div class="columns">
+                <div class="column is-full">
+                    <div class="content is-large">
+                        <h1 class="has-text-centered">Experience</h1>
+                        <br>
+                        <div class="content is-medium ml-6">
+                            <h4>
+                                Computer
+                                Vision Intern, Drive Analytics</h4>
+                            <p class="is-size-6 has-text-grey-dark">October 2021
+                                - February 2022</p>
+                            <ul>
+                                <li>Implemented a <b>Catcher
+                                        detection</b> pipeline on Major
+                                    League Baseball clips.</li>
+                                <li>Performed several experiments and compared
+                                    the results of various
+                                    <b></b>Object Detection</b>
+                                    Models.
+                                </li>
+                                <li>Worked on <b>image-to-3D</b> model
+                                    rendering using state-of-the-art techniques
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="content is-medium ml-6">
+                            <h4>
+                                Deep Learning Intern, MURF.ai</h4>
+                            <p class="is-size-6 has-text-grey-dark">January 2021
+                                - June 2022</p>
+                            <ul>
+                                <li>Developed a Deep Learning based <b>voice
+                                        cloning</b> application on celebrities,
+                                    using
+                                    various <b>state-of-the-art</b> algorithms.
+                                </li>
+                                <li>Improved upon the existing
+                                    <b>speech-to-text</b>
+                                    model to detect filler words.</b>
+                                    Models.
+                                </li>
+                                <li>Implemented a full pipeline <b>docker</b>
+                                    script
+                                    that bridges different processes of the
+                                    pipeline and deployed it on Amazon Elastic
+                                    Cluster Service.
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- GET IN TOUCH -->
+    <section class="section" id="contact">
+        <div class="container mt-6">
+            <div class="columns">
+                <div class="column is-three-fifths is-offset-one-fifth">
+                    <div class="content is-large">
+                        <h1 class="has-text-centered">Get in Touch</h1>
+                        <br>
+                        <form action="mailto:koushik.nov01@gmail.com"
+                            method="post" enctype=”multipart/form-data”>
+                            <div class="field">
+                                <label class="label">Name</label>
+                                <div class="control">
+                                    <input class="input" type="text"
+                                        placeholder="Name">
+                                </div>
+                            </div>
+                            <div class="field">
+                                <label class="label">Email</label>
+                                <div class="control">
+                                    <input class="input" type="email"
+                                        placeholder="Email">
+                                </div>
+                            </div>
+
+                            <div class="field">
+                                <label class="label">Message</label>
+                                <div class="control">
+                                    <textarea class="textarea"
+                                        placeholder="Message"></textarea>
+                                </div>
+                            </div>
+
+                            <div class="field is-grouped">
+                                <div class="control">
+                                    <button
+                                        class="button is-link">Submit</button>
+                                </div>
+                                <div class="control">
+                                    <input class="button is-link is-light"
+                                        type="reset"></input>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="content has-text-centered">
+            <a href="https://bulma.io">
+                <img src="https://bulma.io/images/made-with-bulma.png"
+                    alt="Made with Bulma" width="128" height="24">
+            </a>
+        </div>
+    </footer>
+    <script src="index.js"></script>
 </body>
 
 </html>
