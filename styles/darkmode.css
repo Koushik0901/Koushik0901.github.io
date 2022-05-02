@@ -3,6 +3,19 @@ body {
     font-size: 22px;
 }
 
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+i,
+b,
+li {
+    color: #fff !important
+}
+
 /* Navbar */
 .navbar {
     font-weight: bold;
@@ -59,7 +72,7 @@ input[id="theme-toggle"]:checked:before {
 
 /* Buttons */
 .learn-more-button {
-    background-color: white;
+    background-color: #17181c;
     color: #485fc7;
     font-size: 18px;
     padding: 8px 15px;
@@ -75,7 +88,7 @@ input[id="theme-toggle"]:checked:before {
 
 .pub-buttons,
 .cite-trigger {
-    background-color: white;
+    background-color: #17181c;
     font-size: 14px;
     color: #485fc7;
     padding: 5px 15px;
@@ -88,6 +101,11 @@ input[id="theme-toggle"]:checked:before {
 .cite-trigger:hover {
     background-color: #485fc7;
     color: white;
+}
+
+
+.modal-card-body {
+    background-color: #17181c !important;
 }
 
 /* icons and progress bars */
@@ -111,7 +129,7 @@ input[id="theme-toggle"]:checked:before {
 .fa-github,
 .fa-envelope,
 .ai-google-scholar {
-    background: white;
+    background: #17181c;
     color: #485fc7;
 }
 

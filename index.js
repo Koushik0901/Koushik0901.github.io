@@ -62,3 +62,20 @@ function copyBib(tagid) {
     alert("Copied the text: " + bib);
     console.log(bib);
 }
+
+// theme toggle
+function switchTheme() {
+    var checkBox = document.getElementById("theme-toggle");
+    var darkmodeLink = document.getElementById("darkmode-css");
+    var myStylesheet = document.getElementById("my-css");
+
+    if (checkBox.checked == true) {
+        darkmodeLink.setAttribute("href", "https://unpkg.com/bulma-prefers-dark");
+        myStylesheet.setAttribute("href", "styles/darkmode.css");
+
+    }
+    else {
+        darkmodeLink.setAttribute("href", "");
+        myStylesheet.setAttribute("href", "styles/lightmode.css");
+    }
+}
