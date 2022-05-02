@@ -70,7 +70,7 @@ function switchTheme() {
     var myStylesheet = document.getElementById("my-css");
 
     if (checkBox.checked == true) {
-        darkmodeLink.setAttribute("href", "https://unpkg.com/bulma-prefers-dark");
+        darkmodeLink.setAttribute("href", "styles/bulma-prefers-dark.css");
         myStylesheet.setAttribute("href", "styles/darkmode.css");
 
     }
