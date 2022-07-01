@@ -80,3 +80,26 @@ function switchTheme() {
 		myStylesheet.setAttribute("href", "styles/lightmode.css");
 	}
 }
+
+function goToTop() {
+	document.body.scrollIntoView({
+		behavior: "smooth",
+	});
+}
+
+// When the user scrolls down 20px from the top of the document, show the button
+window.onscroll = function () {
+	scrollFunction();
+};
+
+function scrollFunction() {
+	var topButton = document.getElementById("topBtn");
+	if (
+		document.body.scrollTop > 1000 ||
+		document.documentElement.scrollTop > 1000
+	) {
+		topButton.classList.remove("hidden");
+	} else {
+		topButton.classList.add("hidden");
+	}
+}

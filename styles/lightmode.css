@@ -167,3 +167,26 @@ input[id="theme-toggle"]:checked:before {
     padding: 6px 8px 6px 8px;
     height: auto;
 }
+
+.back-to-top {
+    width: 100;
+    height: 100;
+    position: fixed;
+    right: 2rem;
+    bottom: 2rem;
+    border-radius: 100%;
+    background: #141c38;
+    padding: 0.5rem;
+    border: none;
+    cursor: pointer;
+}
+
+.hidden {
+    opacity: 0%;
+}
+
+.back-to-top-icon {
+    width: 30px;
+    height: 30px;
+    color: #485fc7;
+}
