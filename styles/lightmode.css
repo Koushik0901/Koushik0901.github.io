@@ -19,7 +19,8 @@ input[id="theme-toggle"] {
     position: relative;
     width: 70px;
     height: 35px;
-    background-image: url(https://i.postimg.cc/857jHw2q/Screenshot-2020-04-16-at-1-07-06-PM.png);
+    
+    background-image:url("../assets/clouds.jpg");
     background-size: cover;
     border-radius: 50px;
     outline: none;
@@ -30,17 +31,17 @@ input[id="theme-toggle"] {
 input[id="theme-toggle"]:before {
     content: "";
     position: absolute;
-    top: 0;
-    left: 0;
-    height: 35px;
-    width: 35px;
+    top: 2.5px;
+    left: 1px;
+    height: 31px;
+    width: 31px;
     background-color: #F7CA33;
     transition: all .9s;
     border-radius: 50px;
 }
 
 input[id="theme-toggle"]:checked {
-    background-image: url(https://i.postimg.cc/Hn0nstVK/Screenshot-2020-04-16-at-1-07-19-PM.png);
+    background-image: url("../assets/stars.jpg");
     transition: background-image .90s;
 
 }
