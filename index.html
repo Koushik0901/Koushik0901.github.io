@@ -23,7 +23,7 @@
 
 <body>
     <!-- Navigation Bar -->
-    <nav class="navbar has-shadow is-fixed-top">
+    <nav class="navbar has-shadow is-fixed-top main-navbar">
         <div class="navbar-brand">
             <a class="navbar-burger" id="burger">
                 <span></span>
@@ -37,27 +37,39 @@
                 <a class="navbar-item" href="#bio">About</a>
                 <a class="navbar-item" href="#experience">Experience</a>
                 <a class="navbar-item" href="#projects">Projects</a>
+                <a class="navbar-item" href="#how-i-work">How I Like to Work</a>
                 <a class="navbar-item" href="#skills">Skills</a>
                 <a class="navbar-item" href="#publications">Publications</a>
                 <a class="navbar-item" href="#contact">Get in
                     Touch</a>
 
-                <input type="checkbox" class="mt-2 mb-2 ml-3 mr-3" id="theme-toggle" onclick="switchTheme();" />
+                <label class="switch mt-2 mb-2 ml-3 mr-3">
+                    <input id="theme-toggle" type="checkbox" onclick="switchTheme();" />
+                    <span class="slider">
+                        <div class="star star_1"></div>
+                        <div class="star star_2"></div>
+                        <div class="star star_3"></div>
+                        <svg viewBox="0 0 16 16" class="cloud_1 cloud">
+                            <path transform="matrix(.77976 0 0 .78395-299.99-418.63)" fill="#fff"
+                                d="m391.84 540.91c-.421-.329-.949-.524-1.523-.524-1.351 0-2.451 1.084-2.485 2.435-1.395.526-2.388 1.88-2.388 3.466 0 1.874 1.385 3.423 3.182 3.667v.034h12.73v-.006c1.775-.104 3.182-1.584 3.182-3.395 0-1.747-1.309-3.186-2.994-3.379.007-.106.011-.214.011-.322 0-2.707-2.271-4.901-5.072-4.901-2.073 0-3.856 1.202-4.643 2.925">
+                            </path>
+                        </svg>
+                    </span>
+                </label>
             </div>
     </nav>
-
     <section class="section" id="bio">
         <div class="container mt-6">
             <div class="columns">
                 <div class="column is-two-fifths has-text-centered">
                     <figure class="img">
-                        <img src="assets/images/profile_pic.png" height="300px" width="300px">
+                        <img src="assets/images/headshot-chatgpt.png" height="300px" width="300px">
                     </figure>
                     <br><br>
                     <b class="is-size-3"> Koushik Sivarama
                         Krishnan</b><br><br>
                     <i class="is-size-5">
-                        Machine Learning Engineer | NLP, Computer Vision & Speech | GenAI, RAG & RL Agents
+                        Applied ML Engineer | LLM/RAG Systems, NLP, Computer Vision & Speech
                     </i>
 
                     <br><br>
@@ -67,18 +79,18 @@
                     <a href="mailto:koushik.nov01@gmail.com" class="fa fa-envelope" target="_blank"></a>
                     <a href="https://scholar.google.com/citations?user=lDmjJtoAAAAJ&hl=en" class="ai ai-google-scholar"
                         target="_blank"></a>
+                    <div class="hero-cta-group">
+                        <a href="assets/resume_canada.pdf" class="hero-cta hero-cta-primary"
+                            target="_blank" rel="noopener noreferrer">Download Resume</a>
+                        <a href="#projects" class="hero-cta hero-cta-secondary">View Top Projects</a>
+                    </div>
 
                 </div>
                 <div class="column is-half" id="bio">
                     <div class="content is-large">
                         <h1>Biography</h1>
                         <p>
-                            I'm a Machine Learning Engineer who loves turning messy text, images, and audio
-                            into reliable AI products. I recently completed my MEng in Applied Data Science at the
-                            University
-                            of Victoria, and over the last few years I've focused on building GenAI, LLM/RAG systems,
-                            and
-                            RL-powered agents that help real teams search faster, decide better, and trust their tools.
+                            I'm an Applied ML Engineer specializing in LLMs, RAG, and agentic AI systems. I've shipped end-to-end ML workflows, from experimentation and fine-tuning through deployment and monitoring, across insurance, legal tech, and speech AI. I care about the full stack: model performance, MLOps infrastructure, and building AI that actually holds up in production.
                         </p>
                     </div>
                     <div class="content is-large" id="education">
@@ -112,83 +124,125 @@
                     <div class="content is-large">
                         <h1 class="has-text-centered">Experience</h1>
                         <br>
+                        <div class="experience-timeline">
+                            <div class="content is-medium timeline-item reveal-on-scroll">
+                                <h4>Co-op Data Scientist, Insurance Corporation of British Columbia (ICBC)</h4>
+                                <p class="role-impact">Built internal AI decision-support systems across claims and policy
+                                    workflows, improving retrieval quality and prioritization for analyst teams.</p>
+                                <p class="is-size-6 has-text-grey">September 2024 - Present (full-time)</p>
+                                <div class="role-tech-chips">
+                                    <span class="role-chip">Agentic AI</span>
+                                    <span class="role-chip">RAG</span>
+                                    <span class="role-chip">LangChain</span>
+                                    <span class="role-chip">Milvus</span>
+                                    <span class="role-chip">Causal Inference</span>
+                                </div>
+                                <ul>
+                                    <li>
+                                        Developed end-to-end implementation of ICBC's in-house <b>agentic AI assistant</b>
+                                        using Retrieval Augmented Generation (RAG) with LangChain, Milvus, and MCP servers,
+                                        working closely with senior data scientists to design architecture and validate
+                                        performance improvements.
+                                    </li>
+                                    <li>Applied <b>causal inference</b> techniques to evaluate the Comprehensive Medical
+                                        Assessment (CMA) program, guiding stakeholders with data-driven decisions.</li>
+                                    <li>Designed a <b>recommendation engine</b> to prioritize insurance claims, blending
+                                        business logic and data-driven methods to boost decision support and efficiency.
+                                    </li>
+                                </ul>
+                            </div>
 
-                        <div class="content is-medium ml-6">
-                            <h4>Co-op Data Scientist, Insurance Corporation of British Columbia (ICBC)</h4>
-                            <p class="is-size-6 has-text-grey">September 2024 - Present (full-time)</p>
-                            <ul>
-                                <li>
-                                    Developed end-to-end implementation of ICBC's in-house <b>agentic AI assistant</b>
-                                    using Retrieval Augmented Generation (RAG) with LangChain, Milvus, and MCP servers,
-                                    working closely with senior data scientists to design architecture and validate
-                                    performance improvements.
-                                </li>
-                                <li>Applied <b>causal inference</b> techniques to evaluate the Comprehensive Medical
-                                    Assessment (CMA) program, guiding stakeholders with data-driven decisions.</li>
-                                <li>Designed a <b>recommendation engine</b> to prioritize insurance claims, blending
-                                    business logic and data-driven methods to boost decision support and efficiency.
-                                </li>
-                            </ul>
-                        </div>
-                        <br>
+                            <div class="content is-medium timeline-item reveal-on-scroll">
+                                <h4>Research Engine Developer, Justice Data and Design Lab</h4>
+                                <p class="role-impact">Delivered a faster legal research assistant and analytics pipeline to
+                                    surface unmet legal needs for policy and access-to-justice stakeholders.</p>
+                                <p class="is-size-6 has-text-grey">May 2024 - February 2025 (part-time)</p>
+                                <div class="role-tech-chips">
+                                    <span class="role-chip">RAG</span>
+                                    <span class="role-chip">NLP</span>
+                                    <span class="role-chip">Topic Modeling</span>
+                                    <span class="role-chip">Power BI</span>
+                                    <span class="role-chip">Legal Analytics</span>
+                                </div>
+                                <ul>
+                                    <li>Collaborated with MITACS to leverage data analysis and machine learning, aiming to
+                                        enhance <b>access to justice</b> through evidence-based opportunities.</li>
+                                    <li><b>Doubled</b> the performance and efficiency of the research engine chatbot using
+                                        <b>Retrieval Augmented Generation (RAG)</b> to better identify and address unmet
+                                        legal needs.
+                                    </li>
+                                    <li>Conducted advanced data analysis on large-scale legal text datasets from Reddit and
+                                        People's Law School using <b>Topic Modeling</b> and <b>Power BI</b> visualizations.
+                                    </li>
+                                </ul>
+                            </div>
 
-                        <div class="content is-medium ml-6">
-                            <h4>Research Engine Developer, Justice Data and Design Lab</h4>
-                            <p class="is-size-6 has-text-grey">May 2024 - February 2025 (part-time)</p>
-                            <ul>
-                                <li>Collaborated with MITACS to leverage data analysis and machine learning, aiming to
-                                    enhance <b>access to justice</b> through evidence-based opportunities.</li>
-                                <li><b>Doubled</b> the performance and efficiency of the research engine chatbot using
-                                    <b>Retrieval Augmented Generation (RAG)</b> to better identify and address unmet
-                                    legal needs.
-                                </li>
-                                <li>Conducted advanced data analysis on large-scale legal text datasets from Reddit and
-                                    People's Law School using <b>Topic Modeling</b> and <b>Power BI</b> visualizations.
-                                </li>
-                            </ul>
-                        </div>
-                        <br>
+                            <div class="content is-medium timeline-item reveal-on-scroll">
+                                <h4>Machine Learning Engineer, SeiSei.ai</h4>
+                                <p class="role-impact">Improved voice model quality and scaled audio data operations to
+                                    accelerate multilingual speech product delivery.</p>
+                                <p class="is-size-6 has-text-grey">April 2023 - July 2023 (full-time)</p>
+                                <div class="role-tech-chips">
+                                    <span class="role-chip">Speech ML</span>
+                                    <span class="role-chip">Model Fine-tuning</span>
+                                    <span class="role-chip">Data Pipelines</span>
+                                    <span class="role-chip">TrueFoundry</span>
+                                    <span class="role-chip">Team Leadership</span>
+                                </div>
+                                <ul>
+                                    <li><b>Fine-tuned</b> the FreeVC voice conversion model, achieving a <b>15%</b>
+                                        performance boost on Hindi audio through hyperparameter tuning and preprocessing.
+                                    </li>
+                                    <li><b>Directed and supervised</b> a team of interns to deploy ML models with
+                                        Truefoundry, accelerating project delivery and performance targets.</li>
+                                    <li>Enhanced data delivery and automated data pipelines for 5000+ hours of audio,
+                                        improving system performance.</li>
+                                </ul>
+                            </div>
 
-                        <div class="content is-medium ml-6">
-                            <h4>Machine Learning Engineer, SeiSei.ai</h4>
-                            <p class="is-size-6 has-text-grey">April 2023 - July 2023 (full-time)</p>
-                            <ul>
-                                <li><b>Fine-tuned</b> the FreeVC voice conversion model, achieving a <b>15%</b>
-                                    performance boost on Hindi audio through hyperparameter tuning and preprocessing.
-                                </li>
-                                <li><b>Directed and supervised</b> a team of interns to deploy ML models with
-                                    Truefoundry, accelerating project delivery and performance targets.</li>
-                                <li>Enhanced data delivery and automated data pipelines for 5000+ hours of audio,
-                                    improving system performance.</li>
-                            </ul>
-                        </div>
-                        <br>
+                            <div class="content is-medium timeline-item reveal-on-scroll">
+                                <h4>Computer Vision Intern, Drive Analytics</h4>
+                                <p class="role-impact">Built production-oriented sports video analytics workflows and
+                                    contributed computer vision features linked to measurable business gains.</p>
+                                <p class="is-size-6 has-text-grey">September 2021 - February 2022 (part-time)</p>
+                                <div class="role-tech-chips">
+                                    <span class="role-chip">Computer Vision</span>
+                                    <span class="role-chip">AWS</span>
+                                    <span class="role-chip">Celery</span>
+                                    <span class="role-chip">RabbitMQ</span>
+                                    <span class="role-chip">Django</span>
+                                </div>
+                                <ul>
+                                    <li>Engineered a Major League Baseball video analytics system deployed on <b>AWS</b>
+                                        using <b>Celery</b>, <b>RabbitMQ</b>, and <b>Django</b>.</li>
+                                    <li>Led a team in image-to-3D model rendering, increasing profits by <b>10%</b> through
+                                        innovative vision techniques.</li>
+                                    <li>Conducted comparative analysis of <b>object detection</b> models for glove and
+                                        baseball detection.</li>
+                                </ul>
+                            </div>
 
-                        <div class="content is-medium ml-6">
-                            <h4>Computer Vision Intern, Drive Analytics</h4>
-                            <p class="is-size-6 has-text-grey">September 2021 - February 2022 (part-time)</p>
-                            <ul>
-                                <li>Engineered a Major League Baseball video analytics system deployed on <b>AWS</b>
-                                    using <b>Celery</b>, <b>RabbitMQ</b>, and <b>Django</b>.</li>
-                                <li>Led a team in image-to-3D model rendering, increasing profits by <b>10%</b> through
-                                    innovative vision techniques.</li>
-                                <li>Conducted comparative analysis of <b>object detection</b> models for glove and
-                                    baseball detection.</li>
-                            </ul>
-                        </div>
-                        <br>
-
-                        <div class="content is-medium ml-6">
-                            <h4>Deep Learning Intern, MURF.ai</h4>
-                            <p class="is-size-6 has-text-grey">December 2020 - June 2021 (part-time)</p>
-                            <ul>
-                                <li>Implemented a <b>voice cloning</b> application using state-of-the-art deep learning
-                                    algorithms.</li>
-                                <li>Improved an existing <b>speech-to-text</b> model for better filler word detection.
-                                </li>
-                                <li>Created a comprehensive <b>Docker</b> script to automate pipelines and deployed it
-                                    using <b>AWS SQS</b> and <b>Amazon ECS</b> for scalable performance.</li>
-                            </ul>
+                            <div class="content is-medium timeline-item reveal-on-scroll">
+                                <h4>Deep Learning Intern, MURF.ai</h4>
+                                <p class="role-impact">Developed scalable speech model tooling for voice cloning and
+                                    transcription improvements in cloud deployment environments.</p>
+                                <p class="is-size-6 has-text-grey">December 2020 - June 2021 (part-time)</p>
+                                <div class="role-tech-chips">
+                                    <span class="role-chip">Deep Learning</span>
+                                    <span class="role-chip">Speech-to-Text</span>
+                                    <span class="role-chip">Docker</span>
+                                    <span class="role-chip">AWS SQS</span>
+                                    <span class="role-chip">Amazon ECS</span>
+                                </div>
+                                <ul>
+                                    <li>Implemented a <b>voice cloning</b> application using state-of-the-art deep learning
+                                        algorithms.</li>
+                                    <li>Improved an existing <b>speech-to-text</b> model for better filler word detection.
+                                    </li>
+                                    <li>Created a comprehensive <b>Docker</b> script to automate pipelines and deployed it
+                                        using <b>AWS SQS</b> and <b>Amazon ECS</b> for scalable performance.</li>
+                                </ul>
+                            </div>
                         </div>
 
                     </div>
@@ -201,102 +255,159 @@
     <section class="section" id="projects">
         <div class="container mt-6">
             <div class="content is-large">
-                <h1 class="has-text-centered">Projects
-                </h1>
+                <h1 class="has-text-centered">Projects</h1>
+                <p class="has-text-centered is-size-5">
+                    <a href="https://github.com/Koushik0901" target="_blank" rel="noopener noreferrer">View all projects
+                        on GitHub</a>
+                </p>
             </div>
-            <br><br>
-            <div class="columns" id="txt2sql-project">
-                <div class="column is-5">
-                    <figure class="image is-2by1">
-                        <img src="assets/images/VirtualEye.png" class="project-images"
-                            alt="virtual-eye: drowning detection system" border=2>
-                    </figure>
+            <br>
+            <div class="columns is-multiline">
+                <div class="column is-6">
+                    <article class="box featured-project-card reveal-on-scroll">
+                        <figure class="image is-16by9 mb-4">
+                            <img src="assets/images/captain-cargo.jpg"
+                                class="project-images" alt="captain cargo ai delivery tracking system">
+                        </figure>
+                        <h3 class="project-card-title">Captain Cargo - AI Delivery Tracking System</h3>
+                        <p class="project-card-text"><span class="project-label">Problem:</span> Support teams were
+                            spending <b>significant time</b> on <b>repetitive delivery status queries</b> that required no human
+                            judgment.</p>
+                        <p class="project-card-text"><span class="project-label">Process:</span> Built a voice-first
+                            <b>agentic AI assistant</b> workflow using <b>FastAPI</b>, conversational AI via <b>Vapi</b>, and structured order status
+                            retrieval backed by a <b>circuit breaker</b> and <b>caching layer</b>.</p>
+                        <p class="project-card-text"><span class="project-label">Why:</span> Chose voice + API
+                            orchestration to <b>eliminate manual touchpoints</b> entirely, with <b>production safeguards</b> so the
+                            system degrades gracefully when dependencies go down.</p>
+                        <p class="project-card-text"><span class="project-label">Impact:</span> Converted manual status
+                            lookups into a <b>fully automated voice flow</b> achieving <b>94% eval accuracy</b> and <b>127ms average
+                            latency</b>, with <b>75 tests</b> covering unit, contract, and integration scenarios.</p>
+                        <div class="project-link-group">
+                            <a href="https://github.com/Koushik0901/Captain-Cargo---AI-Delivery-Tracking-System"
+                                target="_blank"
+                                rel="noopener noreferrer" class="learn-more-button">Learn More</a>
+                        </div>
+                    </article>
                 </div>
-                <div class="column is-7">
-                    <div class="content is-medium">
-                        <h3>Virtualeye - Life Guard For Swimming Pools To Detect
-                            Active Drowning</h3>
-                        <p>An active drowning detection system built using
-                            YOLOv5 constantly monitors the swimmers using the
-                            underwater camera feed and triggers an alarm when a
-                            person the system detects a drowning person. This
-                            system is highly accurate and works in real-time on
-                            low compute devices.</p>
-                        <a href="https://github.com/IBM-EPBL/IBM-Project-3786-1658635934" target="_blank"
-                            class="learn-more-button">Learn
-                            More</a>
-                    </div>
+                <div class="column is-6">
+                    <article class="box featured-project-card reveal-on-scroll">
+                        <figure class="image is-16by9 mb-4">
+                            <img src="assets/images/NYC-demand-forcasting.png"
+                                class="project-images" alt="nyc 311 demand forecasting optimization project">
+                        </figure>
+                        <h3 class="project-card-title">NYC 311 Demand Forecasting & Optimization</h3>
+                        <p class="project-card-text"><span class="project-label">Problem:</span> Staffing decisions
+                            were <b>reactive</b>, creating <b>persistent mismatch</b> between service demand and available teams.</p>
+                        <p class="project-card-text"><span class="project-label">Process:</span> Built a forecasting
+                            and optimization pipeline using <b>historical 311 request patterns</b>, <b>time-series modeling</b>, and <b>Bayesian optimization</b>
+                            to generate <b>capacity recommendations</b>.</p>
+                        <p class="project-card-text"><span class="project-label">Why:</span> Chose probabilistic
+                            optimization over static thresholds to make staffing plans <b>robust under demand uncertainty</b>,
+                            not just accurate on average.</p>
+                        <p class="project-card-text"><span class="project-label">Impact:</span> Produced actionable
+                            staffing recommendations that reduced both <b>under-allocation risk</b> and <b>resource waste</b> across
+                            service demand cycles.</p>
+                        <div class="project-link-group">
+                            <a href="https://github.com/Koushik0901/NYC-311-Demand-Forecasting-Optimization"
+                                target="_blank" rel="noopener noreferrer" class="learn-more-button">Learn More</a>
+                        </div>
+                    </article>
+                </div>
+                <div class="column is-6">
+                    <article class="box featured-project-card reveal-on-scroll">
+                        <figure class="image is-16by9 mb-4">
+                            <img src="assets/images/genz-ai-therapist.png"
+                                class="project-images" alt="genz ai therapist project">
+                        </figure>
+                        <h3 class="project-card-title">GenZ AI Therapist</h3>
+                        <p class="project-card-text"><span class="project-label">Problem:</span> Generic chatbots fail
+                            to sustain emotionally safe, context-aware conversations, especially for younger users who
+                            need <b>consistency</b>, not just answers.</p>
+                        <p class="project-card-text"><span class="project-label">Process:</span> Designed an <b>agentic AI assistant</b>
+                            with <b>conversational memory</b>, empathetic tone shaping, <b>RAG-style context retrieval</b>, and guardrail-aware prompting to keep
+                            interactions safe and coherent across turns.</p>
+                        <p class="project-card-text"><span class="project-label">Why:</span> Prioritized tone
+                            consistency and <b>response safety</b> over feature breadth; in mental wellness, <b>trust is the
+                            product</b>.</p>
+                        <p class="project-card-text"><span class="project-label">Impact:</span> Achieved measurably
+                            more coherent <b>multi-turn conversations</b> with <b>near-zero guardrail violations</b>, creating an
+                            experience closer to supportive dialogue than a FAQ bot.</p>
+                        <div class="project-link-group">
+                            <a href="https://github.com/Koushik0901/GenZ-AI-Therapist" target="_blank"
+                                rel="noopener noreferrer" class="learn-more-button">Learn More</a>
+                        </div>
+                    </article>
+                </div>
+                <div class="column is-6">
+                    <article class="box featured-project-card reveal-on-scroll">
+                        <figure class="image is-16by9 mb-4">
+                            <img src="assets/images/brain-MRI-flair-segmentation.png"
+                                class="project-images" alt="brain mri flair segmentation">
+                        </figure>
+                        <h3 class="project-card-title">Brain MRI FLAIR Segmentation</h3>
+                        <p class="project-card-text"><span class="project-label">Problem:</span> MRI abnormality
+                            segmentation workflows were <b>slow</b> and difficult to operationalize end to end.</p>
+                        <p class="project-card-text"><span class="project-label">Process:</span> Built a full MLOps
+                            pipeline covering <b>data handling</b>, <b>experiment tracking</b>, <b>MobileNetV3-based segmentation</b>, and deployment-ready model
+                            serving.</p>
+                        <p class="project-card-text"><span class="project-label">Why:</span> Chose a lighter backbone
+                            to hit <b>deployable inference speeds</b> on <b>CPU-constrained infrastructure</b> without sacrificing
+                            segmentation quality.</p>
+                        <p class="project-card-text"><span class="project-label">Impact:</span> Delivered an end-to-end
+                            pipeline capable of running inference <b>without GPU dependency</b>, closing the gap between
+                            research prototype and clinical deployment readiness.</p>
+                        <div class="project-link-group">
+                            <a href="https://github.com/Koushik0901/FLAIR-Segmentation-MLOPS" target="_blank"
+                                rel="noopener noreferrer" class="learn-more-button">Learn More</a>
+                        </div>
+                    </article>
                 </div>
             </div>
-            <br><br>
-            <div class="columns" id="txt2sql-project">
-                <div class="column is-5">
-                    <figure class="image is-3by1">
-                        <img src="assets/images/txt2sql.png" class="project-images" alt="" border=2>
-                    </figure>
+        </div>
+    </section>
+
+    <section class="section" id="how-i-work">
+        <div class="container mt-6">
+            <div class="content is-large">
+                <h1 class="has-text-centered">How I Like to Work</h1>
+                <p class="has-text-centered is-size-5">From business objective to production reliability - I own the full arc.</p>
+            </div>
+            <div class="columns is-multiline mt-4">
+                <div class="column is-4">
+                    <article class="box workflow-card reveal-on-scroll">
+                        <h3>1. Problem Framing</h3>
+                        <p>Before writing a single line of code, I map success metrics, constraints, and stakeholder tradeoffs to make sure we're solving the right problem.</p>
+                        <div class="workflow-tags">
+                            <span class="role-chip">Business Goal Mapping</span>
+                            <span class="role-chip">Metric Definition</span>
+                            <span class="role-chip">Risk Analysis</span>
+                        </div>
+                    </article>
                 </div>
-                <div class="column is-7">
-                    <div class="content is-medium">
-                        <h3>Text To SQL</h3>
-                        <p>A Transformer model trained on
-                            WikiSQL
-                            dataset that
-                            accepts natural language as input and returns SQL
-                            Query
-                            as
-                            output. This model is deployed using streamlit.</p>
-                        <a href="https://github.com/Koushik0901/Text2SQL" target="_blank"
-                            class="learn-more-button">Learn
-                            More</a>
-                    </div>
+                <div class="column is-4">
+                    <article class="box workflow-card reveal-on-scroll">
+                        <h3>2. Experimentation</h3>
+                        <p>I run structured experiments - baselines, ablations, and offline evals - to validate design decisions with evidence before committing to an architecture.</p>
+                        <div class="workflow-tags">
+                            <span class="role-chip">Rapid Prototyping</span>
+                            <span class="role-chip">Offline Eval</span>
+                            <span class="role-chip">Ablation Studies</span>
+                        </div>
+                    </article>
+                </div>
+                <div class="column is-4">
+                    <article class="box workflow-card reveal-on-scroll">
+                        <h3>3. Productionization</h3>
+                        <p>I ship with observability, fallback behavior, and test coverage built in - because a model that can't be monitored or recovered from failure isn't production-ready.</p>
+                        <div class="workflow-tags">
+                            <span class="role-chip">MLOps</span>
+                            <span class="role-chip">Monitoring</span>
+                            <span class="role-chip">Reliability</span>
+                        </div>
+                    </article>
                 </div>
             </div>
-            <div class="columns mt-6" id="image-cap-project">
-                <div class="column is-5">
-                    <figure class="image is-3by1">
-                        <img src="assets/images/image-captioning.png" class="project-images" alt="" border=2>
-                    </figure>
-                </div>
-                <div class="column is-7">
-                    <div class="content is-medium">
-                        <h3>Image Captioning 📸 ⇒ 📝</h3>
-                        <p>An encoder-decoder based model
-                            to caption images
-                            built using PyTorch and deployed using
-                            Streamlit.
-                            This model
-                            uses inceptionV3 as encoder and LSTM layers as
-                            decoder. This
-                            model is trained on Flickr30k dataset.</p>
-                        <a href="https://github.com/Koushik0901/Image-Captioning" target="_blank"
-                            class="learn-more-button">Learn
-                            More</a>
-                    </div>
-                </div>
-            </div>
-            <div class="columns mt-6" id="flair-project">
-                <div class="column is-5">
-                    <figure class="image is-16by9">
-                        <img src="assets/images/flair.png" class="project-images" alt="" border=2>
-                    </figure>
-                </div>
-                <div class="column is-7">
-                    <div class="content is-medium">
-                        <h3>Brain MRI FLAIR Segmentation
-                        </h3>
-                        <p>A Complete MLOPS project on
-                            Brain MRI FLAIR Segmentation. A MobileNet v3 based
-                            segmentation project to perform instance
-                            segmentation on FLAIR (Fluid-Attenuated Inversion
-                            Recovery) abnormality in brain MRI images. This
-                            model is trained using Brain MRI segmentation from
-                            kaggle and is deployed on Heroku.</p>
-                        <a href="https://github.com/Koushik0901/FLAIR-Segmentation-MLOPS" target="_blank"
-                            class="learn-more-button">Learn
-                            More</a>
-                    </div>
-                </div>
-            </div>
+        </div>
     </section>
 
 
@@ -308,65 +419,97 @@
                 <div class="column is-full">
                     <div class="content is-large">
                         <h1 class="has-text-centered">Skills</h1>
-
-                        <h6>Machine Learning & Deep Learning</h6>
-                        <div class="progress-wrapper">
-                            <progress class="progress is-link is-large" value="90" max="100">90%</progress>
-                            <p class="progress-value has-text-white">90%</p>
-                        </div>
-
-                        <h6>NLP, LLMs & RAG</h6>
-                        <div class="progress-wrapper">
-                            <progress class="progress is-link is-large" value="90" max="100">90%</progress>
-                            <p class="progress-value has-text-white">90%</p>
-                        </div>
-
-                        <h6>Computer Vision & Speech</h6>
-                        <div class="progress-wrapper">
-                            <progress class="progress is-link is-large" value="85" max="100">85%</progress>
-                            <p class="progress-value has-text-white">85%</p>
-                        </div>
-
-                        <h6>MLOps & Backend APIs (FastAPI, Flask)</h6>
-                        <div class="progress-wrapper">
-                            <progress class="progress is-link is-large" value="85" max="100">85%</progress>
-                            <p class="progress-value has-text-white">85%</p>
-                        </div>
-
-                        <h6>Data Analysis, Experimentation & Evaluation</h6>
-                        <div class="progress-wrapper">
-                            <progress class="progress is-link is-large" value="80" max="100">80%</progress>
-                            <p class="progress-value has-text-white">80%</p>
-                        </div>
-
-                        <h6>Cloud & DevOps (AWS, Azure, GCP, Docker, Kubernetes)</h6>
-                        <div class="progress-wrapper">
-                            <progress class="progress is-link is-large" value="80" max="100">80%</progress>
-                            <p class="progress-value has-text-white">80%</p>
-                        </div>
-
-                        <h6>Python</h6>
-                        <div class="progress-wrapper">
-                            <progress class="progress is-link is-large" value="95" max="100">95%</progress>
-                            <p class="progress-value has-text-white">95%</p>
-                        </div>
-
-                        <h6>SQL & Databases (PostgreSQL, MySQL, MongoDB)</h6>
-                        <div class="progress-wrapper">
-                            <progress class="progress is-link is-large" value="80" max="100">80%</progress>
-                            <p class="progress-value has-text-white">80%</p>
-                        </div>
-
-                        <h6>Git & Collaboration</h6>
-                        <div class="progress-wrapper">
-                            <progress class="progress is-link is-large" value="80" max="100">80%</progress>
-                            <p class="progress-value has-text-white">80%</p>
-                        </div>
-
-                        <h6>Visualization & BI (Power BI, Dashboards)</h6>
-                        <div class="progress-wrapper">
-                            <progress class="progress is-link is-large" value="75" max="100">75%</progress>
-                            <p class="progress-value has-text-white">75%</p>
+                        <p class="has-text-centered is-size-5 tech-stack-intro">Production tools and libraries used
+                            across recent ML and GenAI projects.</p>
+                        <div class="columns is-multiline mt-3">
+                            <div class="column is-6">
+                                <h6 class="tech-group-title">ML / LLM</h6>
+                                <div class="skill-chip-grid">
+                                    <span class="tech-chip">PyTorch</span>
+                                    <span class="tech-chip">TensorFlow</span>
+                                    <span class="tech-chip">Hugging Face</span>
+                                    <span class="tech-chip">LangChain</span>
+                                    <span class="tech-chip">RAG</span>
+                                    <span class="tech-chip">Agentic AI</span>
+                                    <span class="tech-chip">Prompt Engineering</span>
+                                    <span class="tech-chip">Fine-Tuning</span>
+                                    <span class="tech-chip">Model Evaluation</span>
+                                    <span class="tech-chip">RL Agents</span>
+                                    <span class="tech-chip">Computer Vision</span>
+                                    <span class="tech-chip">Speech ML</span>
+                                </div>
+                            </div>
+                            <div class="column is-6">
+                                <h6 class="tech-group-title">Data / Backend</h6>
+                                <div class="skill-chip-grid">
+                                    <span class="tech-chip">Python</span>
+                                    <span class="tech-chip">SQL</span>
+                                    <span class="tech-chip">FastAPI</span>
+                                    <span class="tech-chip">Flask</span>
+                                    <span class="tech-chip">Django</span>
+                                    <span class="tech-chip">Pydantic</span>
+                                    <span class="tech-chip">REST APIs</span>
+                                    <span class="tech-chip">Async Python</span>
+                                    <span class="tech-chip">PostgreSQL</span>
+                                    <span class="tech-chip">MySQL</span>
+                                    <span class="tech-chip">MongoDB</span>
+                                    <span class="tech-chip">Redis</span>
+                                </div>
+                            </div>
+                            <div class="column is-6">
+                                <h6 class="tech-group-title">MLOps / LLMOps</h6>
+                                <div class="skill-chip-grid">
+                                    <span class="tech-chip">Docker</span>
+                                    <span class="tech-chip">Kubernetes</span>
+                                    <span class="tech-chip">AWS</span>
+                                    <span class="tech-chip">Azure</span>
+                                    <span class="tech-chip">GCP</span>
+                                    <span class="tech-chip">MLflow</span>
+                                    <span class="tech-chip">Model Serving</span>
+                                    <span class="tech-chip">A/B Testing</span>
+                                    <span class="tech-chip">Monitoring</span>
+                                    <span class="tech-chip">CI/CD</span>
+                                    <span class="tech-chip">GitHub Actions</span>
+                                </div>
+                            </div>
+                            <div class="column is-6">
+                                <h6 class="tech-group-title">Vector / Retrieval</h6>
+                                <div class="skill-chip-grid">
+                                    <span class="tech-chip">Milvus</span>
+                                    <span class="tech-chip">Vector Search</span>
+                                    <span class="tech-chip">Hybrid Search</span>
+                                    <span class="tech-chip">Embedding Models</span>
+                                    <span class="tech-chip">Retrieval Evaluation</span>
+                                    <span class="tech-chip">Knowledge Bases</span>
+                                    <span class="tech-chip">MCP Servers</span>
+                                </div>
+                            </div>
+                            <div class="column is-6">
+                                <h6 class="tech-group-title">Data / Analytics</h6>
+                                <div class="skill-chip-grid">
+                                    <span class="tech-chip">Pandas</span>
+                                    <span class="tech-chip">NumPy</span>
+                                    <span class="tech-chip">Scikit-learn</span>
+                                    <span class="tech-chip">Power BI</span>
+                                    <span class="tech-chip">Feature Engineering</span>
+                                    <span class="tech-chip">Experiment Design</span>
+                                    <span class="tech-chip">Causal Inference</span>
+                                    <span class="tech-chip">Time Series</span>
+                                </div>
+                            </div>
+                            <div class="column is-6">
+                                <h6 class="tech-group-title">Engineering / Quality</h6>
+                                <div class="skill-chip-grid">
+                                    <span class="tech-chip">Celery</span>
+                                    <span class="tech-chip">RabbitMQ</span>
+                                    <span class="tech-chip">Git</span>
+                                    <span class="tech-chip">Pytest</span>
+                                    <span class="tech-chip">Integration Testing</span>
+                                    <span class="tech-chip">System Design</span>
+                                    <span class="tech-chip">Linux</span>
+                                    <span class="tech-chip">Agile Delivery</span>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -376,154 +519,125 @@
     <!-- PUBLICATIONS -->
     <section class="section" id="publications">
         <div class="container mt-6">
-            <div class="columns">
-                <div class="column is-full">
-                    <div class="content is-large has-text-centered">
-                        <h1>Publications</h1>
-                        <br>
-                        <h5 class="mb-2 has-text-weight-bold">Vision Transformer
-                            based COVID-19
-                            Detection using
-                            Chest X-rays</h5>
-                        <p class="is-size-6 has-text-grey">Koushik Sivarama
-                            Krishnan, Karthik Sivarama Krishnan</p>
+            <div class="content is-large has-text-centered">
+                <h1>Publications</h1>
+            </div>
+            <div class="columns is-multiline mt-4">
+                <div class="column is-4">
+                    <article class="box publication-card reveal-on-scroll">
+                        <h3 class="publication-title">Advancing Ischemic Stroke Diagnosis: A Novel Two-Stage Approach for Blood Clot Origin Identification</h3>
+                        <p class="publication-authors">Koushik Sivarama Krishnan, PJ Nikesh, S Gnanasekar, Karthik Sivarama Krishnan</p>
+                        <p class="publication-meta">arXiv 2023</p>
+                        <p class="publication-citations">Cited by <b>0</b></p>
+                        <p id="stroke-bib" class="is-hidden">
+                            Krishnan, K. S., Nikesh, P. J., Gnanasekar, S., & Krishnan, K. S. (2023). Advancing Ischemic Stroke Diagnosis: A Novel Two-Stage Approach for Blood Clot Origin Identification.
+                        </p>
 
-                        <!-- Modal -->
-                        <div class="modal" id="vit-cite">
-                            <div class="modal-background"></div>
-                            <div class="modal-card">
-                                <header class="modal-card-head">
-                                    <p class="modal-card-title">Cite</p>
-                                    <button class="delete" aria-label="close"></button>
-                                </header>
-                                <section class="modal-card-body">
-                                    <p id="vit-bib" class="is-size-4">
-                                        @INPROCEEDINGS{9609375,
-                                        author={Krishnan, Koushik Sivarama and
-                                        Krishnan, Karthik Sivarama},
-                                        booktitle={2021 6th International
-                                        Conference on Signal Processing,
-                                        Computing and Control (ISPCC)},
-                                        title={Vision Transformer based COVID-19
-                                        Detection using Chest X-rays},
-                                        year={2021},
-                                        volume={},
-                                        number={},
-                                        pages={644-648},
-                                        doi={10.1109/ISPCC53510.2021.9609375}}
-                                    </p>
-                                </section>
-                                <footer class="modal-card-foot">
-                                    <button class="pub-buttons" onclick="copyBib('vit-bib');">Copy</button>
-                                </footer>
-                            </div>
+                        <div class="publication-actions">
+                            <button class="cite-trigger cite-copy-trigger" data-bib-target="stroke-bib">Cite</button>
+                            <a href="https://arxiv.org/abs/2304.13775" target="_blank" class="pub-buttons">ArXiv</a>
+                            <a href="https://scholar.google.ca/citations?view_op=view_citation&hl=en&user=lDmjJtoAAAAJ&citation_for_view=lDmjJtoAAAAJ:IjCSPb-OGe4C"
+                                target="_blank" class="pub-buttons">Scholar</a>
                         </div>
-                        <!-- Buttons -->
-                        <button class="cite-trigger" data-target="vit-cite">
-                            Cite
-                        </button>
-                        <a href="https://arxiv.org/abs/2110.04458" target="_blank" class="pub-buttons">ArXiv</a>
-                        <a href="https://ieeexplore.ieee.org/abstract/document/9609375/" target="_blank"
-                            class="pub-buttons">IEEE</a>
+                    </article>
+                </div>
 
-                        <!-- PUB 2 -->
-                        <br><br><br>
-                        <h5 class="mb-2 has-text-weight-bold">SwiftSRGAN -
-                            Rethinking
-                            Super-Resolution for Efficient and Real-time
-                            Inference</h5>
-                        <p class="is-size-6 has-text-grey">Koushik Sivarama
-                            Krishnan, Karthik Sivarama Krishnan</p>
+                <div class="column is-4">
+                    <article class="box publication-card reveal-on-scroll">
+                        <h3 class="publication-title">Mfaan: unveiling audio deepfakes with a multi-feature authenticity network</h3>
+                        <p class="publication-authors">Koushik Sivarama Krishnan, Karthik Sivarama Krishnan</p>
+                        <p class="publication-meta">SPCOM 2023</p>
+                        <p class="publication-citations">Cited by <b>12</b></p>
+                        <p id="mfaan-bib" class="is-hidden">
+                            Krishnan, K. S., & Krishnan, K. S. (2023). Mfaan: unveiling audio deepfakes with a multi-feature authenticity network.
+                        </p>
 
-                        <!-- model -->
-                        <div class="modal" id="swift-cite">
-                            <div class="modal-background"></div>
-                            <div class="modal-card">
-                                <header class="modal-card-head">
-                                    <p class="modal-card-title">Cite</p>
-                                    <button class="delete" aria-label="close"></button>
-                                </header>
-                                <section class="modal-card-body">
-                                    <p id="swift-bib" class="is-size-4">
-                                        @INPROCEEDINGS{9689188,
-                                        author={Krishnan, Koushik Sivarama and
-                                        Krishnan, Karthik Sivarama},
-                                        booktitle={2021 International Conference
-                                        on Intelligent Cybernetics Technology
-                                        Applications (ICICyTA)},
-                                        title={SwiftSRGAN - Rethinking
-                                        Super-Resolution for Efficient and
-                                        Real-time Inference},
-                                        year={2021},
-                                        volume={},
-                                        number={},
-                                        pages={46-51},
-                                        doi={10.1109/ICICyTA53712.2021.9689188}}
-                                    </p>
-                                </section>
-                                <footer class="modal-card-foot">
-                                    <button class="pub-buttons" onclick="copyBib('swift-bib');">Copy</button>
-                                </footer>
-                            </div>
+                        <div class="publication-actions">
+                            <button class="cite-trigger cite-copy-trigger" data-bib-target="mfaan-bib">Cite</button>
+                            <a href="https://scholar.google.ca/citations?view_op=view_citation&hl=en&user=lDmjJtoAAAAJ&citation_for_view=lDmjJtoAAAAJ:UeHWp8X0CEIC"
+                                target="_blank" class="pub-buttons">Scholar</a>
                         </div>
-                        <!-- buttons -->
-                        <button class="cite-trigger" data-target="swift-cite">
-                            Cite
-                        </button>
-                        <a href="https://arxiv.org/abs/2111.14320" target="_blank" class="pub-buttons">ArXiv</a>
-                        <a href="https://ieeexplore.ieee.org/document/9689188" target="_blank"
-                            class="pub-buttons">IEEE</a>
+                    </article>
+                </div>
 
+                <div class="column is-4">
+                    <article class="box publication-card reveal-on-scroll">
+                        <h3 class="publication-title">Benchmarking Conventional Vision Models on Neuromorphic Fall Detection and Action Recognition Dataset</h3>
+                        <p class="publication-authors">Koushik Sivarama Krishnan, Karthik Sivarama Krishnan</p>
+                        <p class="publication-meta">CCWC 2022</p>
+                        <p class="publication-citations">Cited by <b>12</b></p>
+                        <p id="dvs-bib" class="is-hidden">
+                            @INPROCEEDINGS{9720737, author={Krishnan, Karthik Sivarama and Krishnan, Koushik Sivarama}, booktitle={2022 IEEE 12th Annual Computing and Communication Workshop and Conference (CCWC)}, title={Benchmarking Conventional Vision Models on Neuromorphic Fall Detection and Action Recognition Dataset}, year={2022}, pages={0518-0523}, doi={10.1109/CCWC54503.2022.9720737}}
+                        </p>
 
-                        <!-- PUB 3 -->
-                        <br><br><br>
-                        <h5 class="mb-2 has-text-weight-bold">Benchmarking
-                            Conventional Vision Models
-                            on Neuromorphic Fall Detection and Action
-                            Recognition Dataset</h5>
-                        <p class="is-size-6 has-text-grey">Koushik Sivarama
-                            Krishnan, Karthik Sivarama Krishnan</p>
-
-                        <!-- model -->
-                        <div class="modal" id="dvs-cite">
-                            <div class="modal-background"></div>
-                            <div class="modal-card">
-                                <header class="modal-card-head">
-                                    <p class="modal-card-title">Cite</p>
-                                    <button class="delete" aria-label="close"></button>
-                                </header>
-                                <section class="modal-card-body">
-                                    <p id="dvs-bib" class="is-size-4">
-                                        @INPROCEEDINGS{9720737,
-                                        author={Krishnan, Karthik Sivarama and
-                                        Krishnan, Koushik Sivarama},
-                                        booktitle={2022 IEEE 12th Annual
-                                        Computing and Communication Workshop and
-                                        Conference (CCWC)},
-                                        title={Benchmarking Conventional Vision
-                                        Models on Neuromorphic Fall Detection
-                                        and Action Recognition Dataset},
-                                        year={2022},
-                                        volume={},
-                                        number={},
-                                        pages={0518-0523},
-                                        doi={10.1109/CCWC54503.2022.9720737}}
-                                    </p>
-                                </section>
-                                <footer class="modal-card-foot">
-                                    <button class="pub-buttons" onclick="copyBib('dvs-bib');">Copy</button>
-                                </footer>
-                            </div>
+                        <div class="publication-actions">
+                            <button class="cite-trigger cite-copy-trigger" data-bib-target="dvs-bib">Cite</button>
+                            <a href="https://arxiv.org/abs/2201.12285" target="_blank" class="pub-buttons">ArXiv</a>
+                            <a href="https://ieeexplore.ieee.org/document/9720737" target="_blank"
+                                class="pub-buttons">IEEE</a>
+                            <a href="https://scholar.google.ca/citations?view_op=view_citation&hl=en&user=lDmjJtoAAAAJ&citation_for_view=lDmjJtoAAAAJ:d1gkVwhDpl0C"
+                                target="_blank" class="pub-buttons">Scholar</a>
                         </div>
-                        <!-- buttons -->
-                        <button class="cite-trigger" data-target="dvs-cite">
-                            Cite
-                        </button>
-                        <a href="https://arxiv.org/abs/2201.12285" target="_blank" class="pub-buttons">ArXiv</a>
-                        <a href="https://ieeexplore.ieee.org/document/9720737" target="_blank"
-                            class="pub-buttons">IEEE</a>
+                    </article>
+                </div>
 
-                    </div>
+                <div class="column is-4">
+                    <article class="box publication-card reveal-on-scroll">
+                        <h3 class="publication-title">Efficient Super-Resolution For Chest X-rays</h3>
+                        <p class="publication-authors">Koushik Sivarama Krishnan, Karthik Sivarama Krishnan</p>
+                        <p class="publication-meta">Acta Scientific Computer Sciences 2022</p>
+                        <p class="publication-citations">Cited by <b>6</b></p>
+                        <p id="esr-bib" class="is-hidden">
+                            Krishnan, K. S., & Krishnan, K. S. (2022). Efficient Super-Resolution For Chest X-rays. Acta Scientific Computer Sciences, 4(6).
+                        </p>
+                        <div class="publication-actions">
+                            <button class="cite-trigger cite-copy-trigger" data-bib-target="esr-bib">Cite</button>
+                            <a href="https://scholar.google.ca/citations?view_op=view_citation&hl=en&user=lDmjJtoAAAAJ&citation_for_view=lDmjJtoAAAAJ:9yKSN-GCB0IC"
+                                target="_blank" class="pub-buttons">Scholar</a>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="column is-4">
+                    <article class="box publication-card reveal-on-scroll">
+                        <h3 class="publication-title">Vision Transformer based COVID-19 Detection using Chest X-rays</h3>
+                        <p class="publication-authors">Koushik Sivarama Krishnan, Karthik Sivarama Krishnan</p>
+                        <p class="publication-meta">ISPCC 2021</p>
+                        <p class="publication-citations">Cited by <b>98</b></p>
+                        <p id="vit-bib" class="is-hidden">
+                            @INPROCEEDINGS{9609375, author={Krishnan, Koushik Sivarama and Krishnan, Karthik Sivarama}, booktitle={2021 6th International Conference on Signal Processing, Computing and Control (ISPCC)}, title={Vision Transformer based COVID-19 Detection using Chest X-rays}, year={2021}, pages={644-648}, doi={10.1109/ISPCC53510.2021.9609375}}
+                        </p>
+
+                        <div class="publication-actions">
+                            <button class="cite-trigger cite-copy-trigger" data-bib-target="vit-bib">Cite</button>
+                            <a href="https://arxiv.org/abs/2110.04458" target="_blank" class="pub-buttons">ArXiv</a>
+                            <a href="https://ieeexplore.ieee.org/abstract/document/9609375/" target="_blank"
+                                class="pub-buttons">IEEE</a>
+                            <a href="https://scholar.google.ca/citations?view_op=view_citation&hl=en&user=lDmjJtoAAAAJ&citation_for_view=lDmjJtoAAAAJ:u5HHmVD_uO8C"
+                                target="_blank" class="pub-buttons">Scholar</a>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="column is-4">
+                    <article class="box publication-card reveal-on-scroll">
+                        <h3 class="publication-title">SwiftSRGAN - Rethinking Super-Resolution for Efficient and Real-time Inference</h3>
+                        <p class="publication-authors">Koushik Sivarama Krishnan, Karthik Sivarama Krishnan</p>
+                        <p class="publication-meta">ICICyTA 2021</p>
+                        <p class="publication-citations">Cited by <b>18</b></p>
+                        <p id="swift-bib" class="is-hidden">
+                            @INPROCEEDINGS{9689188, author={Krishnan, Koushik Sivarama and Krishnan, Karthik Sivarama}, booktitle={2021 International Conference on Intelligent Cybernetics Technology Applications (ICICyTA)}, title={SwiftSRGAN - Rethinking Super-Resolution for Efficient and Real-time Inference}, year={2021}, pages={46-51}, doi={10.1109/ICICyTA53712.2021.9689188}}
+                        </p>
+
+                        <div class="publication-actions">
+                            <button class="cite-trigger cite-copy-trigger" data-bib-target="swift-bib">Cite</button>
+                            <a href="https://arxiv.org/abs/2111.14320" target="_blank" class="pub-buttons">ArXiv</a>
+                            <a href="https://ieeexplore.ieee.org/document/9689188" target="_blank"
+                                class="pub-buttons">IEEE</a>
+                            <a href="https://scholar.google.ca/citations?view_op=view_citation&hl=en&user=lDmjJtoAAAAJ&citation_for_view=lDmjJtoAAAAJ:u-x6o8ySG0sC"
+                                target="_blank" class="pub-buttons">Scholar</a>
+                        </div>
+                    </article>
                 </div>
             </div>
         </div>
@@ -533,41 +647,40 @@
     <section class="section" id="contact">
         <div class="container mt-6">
             <div class="columns">
-                <div class="column is-three-fifths is-offset-one-fifth">
+                <div class="column is-8 is-offset-2">
                     <div class="content is-large">
                         <h1 class="has-text-centered">Get in Touch</h1>
                         <br>
-                        <form action="mailto:koushik.nov01@gmail.com" method="post" enctype="multipart/form-data"
-                            class="box">
-                            <div class="field">
-                                <label class="label">Name</label>
-                                <div class="control">
-                                    <input class="input" type="text" placeholder="Name">
-                                </div>
+                        <div class="box contact-cta-panel contact-panel-upgraded reveal-on-scroll">
+                            <div class="contact-headline-wrap">
+                                <p class="contact-badge">Open to Full-Stack ML / GenAI Roles</p>
+                                <h2 class="contact-title">Let's build practical AI products that ship.</h2>
+                                <p class="contact-subtitle">
+                                    Best for roles across Applied ML, LLM/RAG systems, and MLOps-backed AI products.
+                                    I usually respond within <b>24 hours</b>.
+                                </p>
                             </div>
-                            <div class="field">
-                                <label class="label">Email</label>
-                                <div class="control">
-                                    <input class="input" type="email" placeholder="Email">
-                                </div>
+                            <div class="contact-action-grid">
+                                <a class="contact-action-card" href="mailto:koushik.nov01@gmail.com">
+                                    <span class="contact-action-title">Email</span>
+                                    <span class="contact-action-text">koushik.nov01@gmail.com</span>
+                                    <span class="contact-action-cta">Best for interview coordination</span>
+                                </a>
+                                <a class="contact-action-card"
+                                    href="https://www.linkedin.com/in/koushik-sivarama-krishnan/" target="_blank"
+                                    rel="noopener noreferrer">
+                                    <span class="contact-action-title">LinkedIn</span>
+                                    <span class="contact-action-text">Professional updates and direct messaging</span>
+                                    <span class="contact-action-cta">Best for quick outreach</span>
+                                </a>
+                                <a class="contact-action-card" href="https://github.com/Koushik0901" target="_blank"
+                                    rel="noopener noreferrer">
+                                    <span class="contact-action-title">GitHub</span>
+                                    <span class="contact-action-text">Code samples, projects, and technical depth</span>
+                                    <span class="contact-action-cta">Best for technical screening</span>
+                                </a>
                             </div>
-
-                            <div class="field">
-                                <label class="label">Message</label>
-                                <div class="control">
-                                    <textarea class="textarea" placeholder="Message"></textarea>
-                                </div>
-                            </div>
-
-                            <div class="field is-grouped">
-                                <div class="control">
-                                    <button class="button is-link">Submit</button>
-                                </div>
-                                <div class="control">
-                                    <input class="button is-link is-light" type="reset"></input>
-                                </div>
-                            </div>
-                        </form>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -583,13 +696,12 @@
 
 
     <footer class="footer">
-        <div class="content has-text-centered" id="footer-img">
-            <p>
-                Made with&nbsp;
-                <a href="https://bulma.io" target="_blank" rel="noopener noreferrer" aria-label="Bulma CSS Framework">
-                    <img src="https://bulma.io/assets/brand/Bulma%20Logo.png" alt="Bulma CSS Framework Logo" width="128"
-                        height="24">
-                </a>
+        <div class="content has-text-centered footer-content">
+            <p class="footer-title">
+                Trained on deadlines, fine-tuned on production bugs.
+            </p>
+            <p class="footer-subtitle">
+                Low perplexity. High throughput. Occasional overfitting on side projects.
             </p>
         </div>
     </footer>
